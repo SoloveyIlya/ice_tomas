@@ -478,7 +478,7 @@
 
 /* ===== TABLE ===== */
 .sizes-table-container {
-  background-color: #4A4A4A;
+  background-color: var(--info-blocks);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
 }
@@ -675,7 +675,6 @@
 }
 
 .temperature-desc-text {
-  color: var(--text-heading);
   margin: 0;
   font-weight: 500;
 }
