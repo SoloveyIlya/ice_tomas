@@ -2,6 +2,7 @@
 :root {
   /* Background Colors */
   --bg-primary: #FAF8F5;
+  --bg-section: rgba(140, 123, 195, 0.1);
 
   /* Text Colors */
   --text-primary: #6E6E6E;
@@ -28,37 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-heading);
 }
 
-/* Primary CTA Button */
-.btn-primary {
-  background-color: var(--cta-primary);
-  color: #FFFFFF;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #D32F2F;
-}
-
-/* Secondary CTA Button */
-.btn-secondary {
-  background-color: var(--cta-secondary);
-  color: #FFFFFF;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #1A9B92;
-}
+/* Button styles moved to buttons.css */
 
 /* Info Blocks */
 .info-block {

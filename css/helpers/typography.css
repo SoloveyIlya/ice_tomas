@@ -181,13 +181,13 @@ p.small {
 
 /* Links */
 a {
-  color: var(--cta-primary);
+  color: var(--brand-accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #D32F2F;
+  color: var(--brand-accent);
   text-decoration: underline;
 }
 

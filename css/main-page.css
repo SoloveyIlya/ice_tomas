@@ -8,6 +8,7 @@
 @import url('./helpers/layout.css');
 @import url('./helpers/utilities.css');
 @import url('./helpers/animations.css');
+@import url('./helpers/buttons.css');
 
 /* Импорт компонентов */
 @import url('./components/components.css');
@@ -22,24 +23,35 @@
   padding: 0;
 }
 
+.hero-slider-container-inner {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+}
+
 .hero-slider-image {
   width: 100%;
   height: 700px;
   object-fit: cover;
   display: block;
   background-color: var(--border-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-slider-image:first-child {
+  opacity: 1;
+  z-index: 1;
 }
 
 .slider-arrow {
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
   z-index: 10;
+  /* Использует стили из buttons.css через класс btn-arrow */
 }
 
 .slider-arrow-left {
@@ -59,10 +71,26 @@
   width: 40px;
   height: 4px;
   border-radius: 2px;
+  position: relative;
+  background-color: transparent;
+  border: 1px solid var(--info-blocks);
+  overflow: hidden;
 }
 
 .pagination-dot.active {
+  border-color: var(--info-blocks);
+}
+
+.pagination-dot.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
   background-color: var(--info-blocks);
+  border-radius: 2px;
+  animation: fillProgress 5s linear forwards;
 }
 
 .pagination-dot:not(.active) {
@@ -70,10 +98,19 @@
   border: 1px solid var(--info-blocks);
 }
 
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* ===== SECTIONS ===== */
 .section-default {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .section-title {
@@ -96,7 +133,7 @@
 
 /* ===== TEMPERATURE CARDS SECTION ===== */
 .section-temperature {
-  background-color: #E5E5E5;
+  background-color: var(--bg-section);
   border-radius: 25px;
   padding: var(--spacing-2xl) 0;
   width: 100%;
@@ -105,7 +142,7 @@
 }
 
 .temperature-card {
-  background: linear-gradient(135deg, #E0E0E0 0%, #B0B0B0 100%);
+  background: linear-gradient(135deg, #91d287 0%, var(--bg-primary) 100%);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   min-height: 480px;
@@ -115,15 +152,15 @@
 }
 
 .temperature-card-2 {
-  background: linear-gradient(135deg, #D0D0D0 0%, #909090 100%);
+  background: linear-gradient(135deg, #87bfd2 0%, var(--bg-primary) 100%);
 }
 
 .temperature-card-3 {
-  background: linear-gradient(135deg, #C0C0C0 0%, #707070 100%);
+  background: linear-gradient(135deg, #8799d2 0%, var(--bg-primary) 100%);
 }
 
 .temperature-card-4 {
-  background: linear-gradient(135deg, #B0B0B0 0%, #505050 100%);
+  background: linear-gradient(135deg, var(--info-blocks) 0%, var(--bg-primary) 100%);
 }
 
 .temperature-card-icon {
@@ -169,8 +206,8 @@
 
 /* ===== MODELS SECTION ===== */
 .section-models {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .models-pagination {
@@ -186,11 +223,11 @@
 
 /* ===== SIZES SECTION ===== */
 .section-sizes {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
-  background-color: #E5E5E5;
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  background-color: var(--bg-section);
   border-radius: 25px;
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-3xl) 0;
   width: 100%;
 }
 
@@ -256,8 +293,8 @@
 
 /* ===== REVIEWS SECTION ===== */
 .section-reviews {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .reviews-grid {
@@ -265,7 +302,7 @@
 }
 
 .review-card {
-  background: linear-gradient(135deg, #4A4A4A 0%, #E0E0E0 100%);
+  background: linear-gradient(135deg, var(--info-blocks) 0%, var(--bg-section) 100%);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   display: flex;
@@ -300,11 +337,11 @@
 
 /* ===== CONTACT SECTION ===== */
 .section-contact {
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
   margin-bottom: 0;
-  background-color: #E5E5E5;
+  background-color: var(--bg-section);
   border-radius: 25px;
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-3xl) 0;
   width: 100%;
 }
 
@@ -322,7 +359,6 @@
 .contact-photo-card {
   background-color: #4A4A4A;
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-2xl);
   min-height: 400px;
   display: flex;
   align-items: center;
@@ -350,9 +386,9 @@
 }
 
 .contact-submit-button {
-  width: 100%;
   margin-bottom: var(--spacing-lg);
   text-transform: uppercase;
+  /* Использует стили из buttons.css через класс btn-primary */
 }
 
 .contact-divider {
@@ -364,19 +400,12 @@
   margin: 0;
 }
 
-.contact-social-button {
-  width: 100%;
-  padding: var(--spacing-md);
-  background-color: #F5F5F5;
-  border: none;
-  border-radius: var(--border-radius-md);
-  cursor: pointer;
-}
+/* .contact-social-button использует стили из buttons.css через класс btn-social */
 
 /* ===== FOOTER ===== */
 .footer-main {
   margin-top: 0;
-  background-color: #4A4A4A;
+  background-color: var(--info-blocks);
   padding: var(--spacing-2xl) 0;
   width: 100%;
 }
@@ -449,7 +478,7 @@
 
 /* ===== TABLE ===== */
 .sizes-table-container {
-  background-color: #4A4A4A;
+  background-color: var(--info-blocks);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
 }
@@ -521,6 +550,10 @@
     height: 250px;
   }
 
+  .hero-slider-container-inner {
+    height: 250px;
+  }
+
   .slider-arrow {
     width: 32px;
     height: 32px;
@@ -575,7 +608,7 @@
 .logo-container {
   background-color: var(--bg-primary);
   border-radius: 20px;
-  padding: 4px 12px;
+  padding: var(--spacing-md) var(--spacing-xl);
   z-index: 10;
   position: relative;
 }
@@ -607,7 +640,7 @@
   aspect-ratio: 1;
   background-color: #E0E0E0;
   border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
+  object-fit: cover;
 }
 
 .grid-photo-text {
@@ -642,7 +675,6 @@
 }
 
 .temperature-desc-text {
-  color: var(--text-heading);
   margin: 0;
   font-weight: 500;
 }
@@ -650,12 +682,8 @@
 /* Temperature button */
 .temperature-button-inner {
   margin-top: 0;
-  padding: var(--spacing-sm) var(--spacing-md);
-  background-color: transparent;
-  border: 1px solid var(--text-heading);
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
   align-self: center;
+  /* Использует стили из buttons.css через класс btn-outline */
 }
 
 .temperature-button-icon {
@@ -664,7 +692,7 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  background-color: var(--text-heading);
+  background-color: var(--brand-accent);
   border-radius: 50%;
   padding: 4px;
 }
@@ -753,11 +781,11 @@
 
 /* Temperature section */
 .section-temperature-full {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
-  background-color: #E5E5E5;
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  background-color: var(--bg-section);
   border-radius: 25px;
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-3xl) 0;
   width: 100%;
 }
 
@@ -781,8 +809,7 @@
 }
 
 .section-title-span {
-  font-weight: 900;
-  color: var(--text-heading);
+  color: var(--info-blocks);
 }
 
 /* Card placeholder */
@@ -806,11 +833,7 @@
 }
 
 /* Arrow buttons */
-.arrow-button {
-  background: none;
-  border: none;
-  padding: var(--spacing-sm);
-}
+/* .arrow-button использует стили из buttons.css через класс btn-ghost или btn-icon */
 
 /* Social button */
 .social-button-item {
