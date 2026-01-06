@@ -1,0 +1,847 @@
+/* ===== MAIN PAGE STYLES ===== */
+
+/* Импорт вспомогательных файлов */
+@import url('./helpers/reset.css');
+@import url('./helpers/variables.css');
+@import url('./helpers/colors.css');
+@import url('./helpers/typography.css');
+@import url('./helpers/layout.css');
+@import url('./helpers/utilities.css');
+@import url('./helpers/animations.css');
+
+/* Импорт компонентов */
+@import url('./components/components.css');
+@import url('./components/header.css');
+
+/* ===== HERO SECTION ===== */
+.hero-slider {
+  margin-top: 4px;
+}
+
+.hero-slider-container {
+  padding: 0;
+}
+
+.hero-slider-image {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--border-color);
+}
+
+.slider-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.slider-arrow-left {
+  left: 20px;
+}
+
+.slider-arrow-right {
+  right: 20px;
+}
+
+.slider-arrow-icon {
+  font-size: 20px;
+  color: var(--info-blocks);
+}
+
+.pagination-dot {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.pagination-dot.active {
+  background-color: var(--info-blocks);
+}
+
+.pagination-dot:not(.active) {
+  background-color: transparent;
+  border: 1px solid var(--info-blocks);
+}
+
+/* ===== SECTIONS ===== */
+.section-default {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-4xl);
+}
+
+.section-title-highlight {
+  font-weight: 900;
+}
+
+.section-subtitle {
+  color: var(--text-primary);
+}
+
+.section-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ===== TEMPERATURE CARDS SECTION ===== */
+.section-temperature {
+  background-color: #E5E5E5;
+  border-radius: 25px;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.temperature-card {
+  background: linear-gradient(135deg, #E0E0E0 0%, #B0B0B0 100%);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.temperature-card-2 {
+  background: linear-gradient(135deg, #D0D0D0 0%, #909090 100%);
+}
+
+.temperature-card-3 {
+  background: linear-gradient(135deg, #C0C0C0 0%, #707070 100%);
+}
+
+.temperature-card-4 {
+  background: linear-gradient(135deg, #B0B0B0 0%, #505050 100%);
+}
+
+.temperature-card-icon {
+  position: absolute;
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
+  width: 64px;
+  height: 64px;
+}
+
+.temperature-card-content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex: 1;
+}
+
+.temperature-value {
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.temperature-season {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  text-align: center;
+}
+
+.temperature-description {
+  text-align: center;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.temperature-button {
+  align-self: center;
+  margin-top: auto;
+}
+
+/* ===== MODELS SECTION ===== */
+.section-models {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.models-pagination {
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.models-arrow-button {
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+}
+
+/* ===== SIZES SECTION ===== */
+.section-sizes {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  background-color: #E5E5E5;
+  border-radius: 25px;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+.sizes-content {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.sizes-photo-container {
+  flex: 1;
+  min-width: 300px;
+  margin-right: var(--spacing-xl);
+}
+
+.sizes-photo-card {
+  background-color: #4A4A4A;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sizes-photo-text {
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sizes-form-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sizes-form-input {
+  background-color: #F5F5F5;
+}
+
+.sizes-form-textarea {
+  background-color: #F5F5F5;
+  resize: vertical;
+}
+
+.sizes-submit-button {
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+}
+
+.sizes-divider {
+  margin-bottom: var(--spacing-lg);
+}
+
+.sizes-social-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+/* ===== REVIEWS SECTION ===== */
+.section-reviews {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.reviews-grid {
+  margin-bottom: var(--spacing-xl);
+}
+
+.review-card {
+  background: linear-gradient(135deg, #4A4A4A 0%, #E0E0E0 100%);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.review-stars {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  color: #FFD700;
+  font-size: 18px;
+}
+
+.review-name {
+  color: white;
+  margin: 0;
+}
+
+.review-text {
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.reviews-pagination {
+  color: var(--text-heading);
+  margin: 0;
+}
+
+/* ===== CONTACT SECTION ===== */
+.section-contact {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: 0;
+  background-color: #E5E5E5;
+  border-radius: 25px;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+.contact-content {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.contact-photo-container {
+  flex: 1;
+  min-width: 300px;
+  margin-right: var(--spacing-xl);
+}
+
+.contact-photo-card {
+  background-color: #4A4A4A;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-photo-text {
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-form-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form-input {
+  background-color: #F5F5F5;
+}
+
+.contact-form-textarea {
+  background-color: #F5F5F5;
+  resize: vertical;
+}
+
+.contact-submit-button {
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+}
+
+.contact-divider {
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-divider-text {
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.contact-social-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.footer-main {
+  margin-top: 0;
+  background-color: #4A4A4A;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+.footer-content {
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-brand-title {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-brand-text {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-social-link {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+
+.footer-contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer-contact-title {
+  color: white;
+  margin: 0;
+}
+
+.footer-contact-text {
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: var(--spacing-lg);
+}
+
+.footer-bottom-content {
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.footer-copyright {
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.footer-bottom-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+
+/* ===== TABLE ===== */
+.sizes-table-container {
+  background-color: #4A4A4A;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.sizes-table-title {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.sizes-table-wrapper {
+  overflow-x: auto;
+}
+
+.sizes-table {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.sizes-table th,
+.sizes-table td {
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.sizes-table th {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.sizes-table td:first-child {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.sizes-table td:not(:first-child) {
+  background-color: rgba(255,255,255,0.15);
+  text-align: center;
+}
+
+.sizes-table tbody tr {
+  background-color: transparent;
+}
+
+.sizes-table tbody tr:hover {
+  background-color: transparent;
+}
+
+.sizes-table-advice {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: rgba(255,255,255,0.1);
+  border-radius: var(--border-radius-md);
+}
+
+.sizes-table-advice-text {
+  color: white;
+  margin: 0;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+  .hero-slider {
+    margin-top: 0;
+  }
+
+  .hero-slider-image {
+    height: 250px;
+  }
+
+  .slider-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slider-arrow-icon {
+    font-size: 16px;
+  }
+
+  .slider-arrow-left {
+    left: 10px;
+  }
+
+  .slider-arrow-right {
+    right: 10px;
+  }
+
+  .pagination-dot {
+    width: 24px;
+    height: 3px;
+  }
+
+  section.container h1 {
+    font-size: var(--font-size-2xl);
+    line-height: 1.2;
+  }
+
+  section.container .flex.gap-lg {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  section.container .flex.gap-lg > div {
+    min-width: 100%;
+  }
+
+  .sizes-photo-container,
+  .contact-photo-container {
+    margin-right: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* ===== ADDITIONAL UTILITY CLASSES FOR INLINE STYLES ===== */
+
+/* Header navigation links */
+.header-nav-link {
+  color: var(--text-heading);
+}
+
+/* Logo containers */
+.logo-container {
+  background-color: var(--bg-primary);
+  border-radius: 20px;
+  padding: 4px 12px;
+  z-index: 10;
+  position: relative;
+}
+
+.logo-container img {
+  height: 70px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+.logo-container-desktop {
+  margin-bottom: -15px;
+}
+
+/* Search icon */
+.header-search-icon {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+}
+
+/* Cart icon */
+.header-cart-icon {
+  font-size: 24px;
+}
+
+/* Grid photo items */
+.grid-photo-item {
+  aspect-ratio: 1;
+  background-color: #E0E0E0;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+}
+
+.grid-photo-text {
+  color: var(--text-primary);
+}
+
+/* Section columns */
+.section-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Temperature card content */
+.temperature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.temperature-value-text {
+  color: var(--text-heading);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.temperature-season-text {
+  color: var(--text-heading);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.temperature-desc-text {
+  color: var(--text-heading);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Temperature button */
+.temperature-button-inner {
+  margin-top: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: transparent;
+  border: 1px solid var(--text-heading);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  align-self: center;
+}
+
+.temperature-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--text-heading);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Mobile menu title */
+.mobile-menu-title {
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.mobile-menu-cart-text {
+  color: var(--text-heading);
+}
+
+/* Hero slider additional */
+.hero-slider-container-inner {
+  padding: 0;
+}
+
+.slider-arrow-icon-span {
+  font-size: 20px;
+  color: var(--info-blocks);
+}
+
+.pagination-container {
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.social-section {
+  margin-top: var(--spacing-md);
+}
+
+.social-spacer {
+  flex: 1;
+}
+
+.social-link-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Section defaults */
+.section-col-flex {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-content-wrap {
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+}
+
+/* Feature item */
+.feature-item {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.feature-icon-container {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-sm);
+}
+
+.feature-text {
+  color: var(--text-primary);
+}
+
+/* Grid photos */
+.grid-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Temperature section */
+.section-temperature-full {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  background-color: #E5E5E5;
+  border-radius: 25px;
+  padding: var(--spacing-2xl) 0;
+  width: 100%;
+}
+
+/* Temperature card icon */
+.temperature-card-icon-container {
+  position: absolute;
+  top: var(--spacing-lg);
+  left: var(--spacing-lg);
+}
+
+/* Section header spacing */
+.section-header-spacing {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Section title */
+.section-title-full {
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-4xl);
+}
+
+.section-title-span {
+  font-weight: 900;
+  color: var(--text-heading);
+}
+
+/* Card placeholder */
+.card-placeholder {
+  background-color: #F5F5F5;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-placeholder-text {
+  color: var(--text-primary);
+}
+
+/* Models section grid */
+.models-grid {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Arrow buttons */
+.arrow-button {
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+}
+
+/* Social button */
+.social-button-item {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.social-button-text {
+  color: var(--text-heading);
+}
+
+/* Table cells */
+.sizes-table td:first-child {
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(255,255,255,0.2);
+}
+
+.sizes-table td:not(:first-child) {
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(255,255,255,0.15);
+}
+
+.sizes-table tbody tr {
+  background-color: transparent !important;
+}

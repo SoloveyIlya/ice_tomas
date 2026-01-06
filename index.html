@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICE TOMAS - Зимняя одежда для детей</title>
+  
+  <!-- Подключение CSS файлов -->
+  <link rel="stylesheet" href="css/main-page.css">
+</head>
+<body>
+  <!-- Верхний промо-баннер -->
+  <div class="promo-section text-center">
+    <p class="text-base font-medium">ПО ПРОМОКОДУ "ТЕПЛОДЕТЯМ" СКИДКА 10%</p>
+  </div>
+
+  <!-- Основной хедер -->
+  <header class="header-main">
+    <div class="container">
+      <div class="flex flex-between items-center">
+        <!-- Левая часть - Навигация (десктоп) -->
+        <nav class="desktop-nav flex gap-lg header-nav">
+          <a href="#" class="text-base header-nav-link">Каталог</a>
+          <a href="#" class="text-base header-nav-link">О нас</a>
+          <a href="#" class="text-base header-nav-link">Контакты</a>
+          <a href="#" class="text-base header-nav-link">Блог</a>
+        </nav>
+
+        <!-- Логотип мобильный (слева) -->
+        <div class="flex-center logo-mobile">
+          <div class="logo-container">
+            <img src="media/logo.png" alt="ICE TOMAS">
+          </div>
+        </div>
+
+        <!-- Центр - Логотип (десктоп) -->
+        <div class="flex-center">
+          <div class="logo-container logo-container-desktop">
+            <img src="media/logo.png" alt="ICE TOMAS">
+          </div>
+        </div>
+
+        <!-- Правая часть - Поиск и корзина (десктоп) -->
+        <div class="flex items-center gap-md desktop-search-cart">
+          <div class="flex items-center relative">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-search-icon">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input 
+              type="text" 
+              class="form-control header-search-input" 
+              placeholder="Комбинезон, куртка, -30°, 104"
+            >
+          </div>
+          <div class="flex items-center relative cursor-pointer">
+            <span class="header-cart-icon">🛒</span>
+            <span class="absolute flex items-center justify-center header-cart-badge">0</span>
+          </div>
+        </div>
+
+        <!-- Бургер меню (мобильный) -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <h2 class="mobile-menu-title">Меню</h2>
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+      </div>
+      
+      <nav>
+        <a href="#" onclick="toggleMobileMenu()">Каталог</a>
+        <a href="#" onclick="toggleMobileMenu()">О нас</a>
+        <a href="#" onclick="toggleMobileMenu()">Контакты</a>
+        <a href="#" onclick="toggleMobileMenu()">Блог</a>
+      </nav>
+
+      <!-- Поиск в мобильном меню -->
+      <div class="mobile-menu-search relative">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input 
+          type="text" 
+          placeholder="Комбинезон, куртка, -30°, 104"
+        >
+      </div>
+
+      <!-- Корзина в мобильном меню -->
+      <div class="mobile-menu-cart" onclick="toggleMobileMenu()">
+        <span>🛒</span>
+        <span class="mobile-menu-cart-text">Корзина</span>
+        <span class="cart-badge">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный слайдер (Hero Section) -->
+  <section class="hero-slider relative">
+    <div class="container relative rounded-lg overflow-hidden hero-slider-container-inner">
+      <!-- Изображение баннера -->
+      <img src="media/1banner.jpg" alt="Баннер" class="hero-slider-image">
+      
+      <!-- Стрелка влево -->
+      <button class="slider-arrow slider-arrow-left absolute flex items-center justify-center cursor-pointer z-10">
+        <span class="slider-arrow-icon-span">◀</span>
+      </button>
+
+      <!-- Стрелка вправо -->
+      <button class="slider-arrow slider-arrow-right absolute flex items-center justify-center cursor-pointer z-10">
+        <span class="slider-arrow-icon-span">▶</span>
+      </button>
+    </div>
+    
+    <!-- Индикаторы пагинации -->
+    <div class="container flex gap-sm pagination-container">
+      <span class="pagination-dot active cursor-pointer"></span>
+      <span class="pagination-dot cursor-pointer"></span>
+      <span class="pagination-dot cursor-pointer"></span>
+      <span class="pagination-dot cursor-pointer"></span>
+      <span class="pagination-dot cursor-pointer"></span>
+    </div>
+
+    <!-- Блок с социальными сетями -->
+    <div class="container flex flex-between items-center social-section">
+      <div class="social-spacer"></div>
+      <div class="flex items-center gap-md">
+        <span class="text-base font-medium header-nav-link">@ice_tomas</span>
+        <a href="#" class="inline-block flex items-center social-link-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#instagram-gradient-hero)"/>
+            <defs>
+              <linearGradient id="instagram-gradient-hero" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F58529"/>
+                <stop offset="50%" stop-color="#DD2A7B"/>
+                <stop offset="100%" stop-color="#8134AF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+        <a href="#" class="inline-block flex items-center social-link-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="#0088cc"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Мы думаем о мелочах" -->
+  <section class="container section-default">
+    <!-- Заголовки -->
+    <div class="text-center section-header">
+      <h1 class="font-bold section-title">Мы думаем о мелочах, потому что они решают зимой</h1>
+      <p class="text-base section-subtitle">Не декоративные детали, а функциональные решения для холода, ветра и движения*</p>
+    </div>
+
+    <!-- Основной контент: две колонки -->
+    <div class="flex gap-lg section-content-wrap">
+      <!-- Левая колонка: список функций -->
+      <div class="section-col-flex">
+        <!-- Функция 1: Защита от ветра и влаги -->
+        <div class="feature-item">
+          <div class="flex items-start feature-icon-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 6V12C4 17.5 12 22 12 22C12 22 20 17.5 20 12V6L12 2Z" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12L11 14L15 10" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Защита от ветра и влаги</h4>
+            <p class="text-base feature-text">Мембранные ткани и проклеенные швы — чтобы ребёнок оставался сухим даже в снегу и слякоти</p>
+          </div>
+        </div>
+
+        <!-- Функция 2: Температурный расчёт -->
+        <div class="feature-item">
+          <div class="flex items-start feature-icon-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 2C9 2 9 3 9 4.5C9 5.32843 9.67157 6 10.5 6H13.5C14.3284 6 15 5.32843 15 4.5C15 3 15 2 15 2" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 2V19" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="19" r="3" stroke="var(--info-blocks)" stroke-width="2"/>
+              <circle cx="12" cy="19" r="1.5" fill="var(--info-blocks)"/>
+              <path d="M10 5H14" stroke="var(--info-blocks)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Температурный расчёт, а не «на глаз»</h4>
+            <p class="text-base feature-text">Каждая модель рассчитана под конкретный диапазон — от мягкой зимы Москвы до северных морозов -40°</p>
+          </div>
+        </div>
+
+        <!-- Функция 3: Свобода движения -->
+        <div class="feature-item">
+          <div class="flex items-start feature-icon-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="5" r="2" fill="var(--info-blocks)"/>
+              <path d="M12 7V11" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9 14L12 11L15 14" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 17L12 19L14 17" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 12L9 14M18 12L15 14" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 19L11 21M14 19L13 21" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Свобода движения</h4>
+            <p class="text-base feature-text">Посадка и крой, в которых можно бегать, падать, подниматься и не чувствовать скованности</p>
+          </div>
+        </div>
+
+        <!-- Функция 4: Видимость и безопасность -->
+        <div class="feature-item">
+          <div class="flex items-start feature-icon-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="var(--info-blocks)" opacity="0.2"/>
+              <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Видимость и безопасность</h4>
+            <p class="text-base feature-text">Светоотражающие элементы там, где они действительно нужны, а не просто «для галочки»</p>
+          </div>
+        </div>
+
+        <!-- Функция 5: Износостойкость -->
+        <div class="feature-item">
+          <div class="flex items-start feature-icon-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="var(--info-blocks)" stroke-width="2"/>
+              <path d="M12 6V12L16 16" stroke="var(--info-blocks)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="1.5" fill="var(--info-blocks)"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Износостойкость</h4>
+            <p class="text-base feature-text">Одежда рассчитана не на один выход, а на сезон активных прогулок</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая колонка: сетка фотографий 2x2 -->
+      <div class="section-col-flex">
+        <div class="grid-photos">
+          <div class="flex items-center justify-center grid-photo-item">
+            <p class="text-center text-sm grid-photo-text">[ДЕТАЛЬНОЕ ФОТО КОМБИНЕЗОНА]</p>
+          </div>
+          <div class="flex items-center justify-center grid-photo-item">
+            <p class="text-center text-sm grid-photo-text">[ДЕТАЛЬНОЕ ФОТО КОМБИНЕЗОНА]</p>
+          </div>
+          <div class="flex items-center justify-center grid-photo-item">
+            <p class="text-center text-sm grid-photo-text">[ДЕТАЛЬНОЕ ФОТО КОМБИНЕЗОНА]</p>
+          </div>
+          <div class="flex items-center justify-center grid-photo-item">
+            <p class="text-center text-sm grid-photo-text">[ДЕТАЛЬНОЕ ФОТО КОМБИНЕЗОНА]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Подбирайте одежду по температуре" -->
+  <section class="section-temperature-full">
+    <div class="container">
+      <!-- Заголовки -->
+      <div class="text-center section-header-spacing">
+        <h1 class="font-bold section-title-full">Подбирайте одежду <span class="section-title-span">по температуре</span>, а не наугад</h1>
+        <p class="text-base section-subtitle">Каждая модель рассчитана под конкретные условия — от мягкой зимы до сильных морозов</p>
+      </div>
+
+      <!-- Карточки с температурными диапазонами -->
+      <div class="grid grid-4 gap-lg">
+      <!-- Карточка 1: Демисезон -->
+      <div class="card temperature-card">
+        <!-- SVG иконка в левом верхнем углу -->
+        <div class="temperature-card-icon-container">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="var(--text-heading)" stroke-width="2"/>
+            <path d="M12 7V12L15 15" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 2V4M12 20V22M22 12H20M4 12H2M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- Температура по центру -->
+        <div class="temperature-content">
+          <p class="text-2xl font-bold temperature-value-text">от +5° до -5°</p>
+          <h3 class="text-xl font-semibold temperature-season-text">Демисезон</h3>
+          <p class="text-base temperature-desc-text">Для осени, ранней зимы и активных прогулок</p>
+        </div>
+        <button class="flex items-center gap-sm temperature-button-inner">
+          <span class="text-base font-medium header-nav-link">ПОДРОБНЕЕ</span>
+          <span class="temperature-button-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Карточка 2: Зима -->
+      <div class="card temperature-card temperature-card-2">
+        <!-- SVG иконка в левом верхнем углу -->
+        <div class="temperature-card-icon-container">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2V4M12 20V22M4 12H2M22 12H20M6.34 6.34L4.93 4.93M19.07 19.07L17.66 17.66M6.34 17.66L4.93 19.07M19.07 4.93L17.66 6.34" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 10C12.5523 10 13 9.55228 13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9C11 9.55228 11.4477 10 12 10Z" fill="var(--text-heading)"/>
+            <path d="M12 16C12.5523 16 13 15.5523 13 15C13 14.4477 12.5523 14 12 14C11.4477 14 11 14.4477 11 15C11 15.5523 11.4477 16 12 16Z" fill="var(--text-heading)"/>
+            <path d="M9 12C9 12.5523 8.55228 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55228 11 9 11.4477 9 12Z" fill="var(--text-heading)"/>
+            <path d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z" fill="var(--text-heading)"/>
+            <path d="M12 18C12.5523 18 13 17.5523 13 17C13 16.4477 12.5523 16 12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18Z" fill="var(--text-heading)"/>
+          </svg>
+        </div>
+        <!-- Температура по центру -->
+        <div class="temperature-content">
+          <p class="text-2xl font-bold temperature-value-text">от -5° до -20°</p>
+          <h3 class="text-xl font-semibold temperature-season-text">Зима</h3>
+          <p class="text-base temperature-desc-text">Для обычной зимы Москвы и Беларуси</p>
+        </div>
+        <button class="flex items-center gap-sm temperature-button-inner">
+          <span class="text-base font-medium header-nav-link">ПОДРОБНЕЕ</span>
+          <span class="temperature-button-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Карточка 3: Сильные морозы -->
+      <div class="card temperature-card temperature-card-3">
+        <!-- SVG иконка в левом верхнем углу -->
+        <div class="temperature-card-icon-container">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 2C9 2 9 3 9 4.5C9 5.32843 9.67157 6 10.5 6H13.5C14.3284 6 15 5.32843 15 4.5C15 3 15 2 15 2" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 2V19" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="19" r="3" stroke="var(--text-heading)" stroke-width="2"/>
+            <circle cx="12" cy="19" r="1.5" fill="var(--text-heading)"/>
+            <path d="M10 5H14" stroke="var(--text-heading)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- Температура по центру -->
+        <div class="temperature-content">
+          <p class="text-2xl font-bold temperature-value-text">от -20° до -40°</p>
+          <h3 class="text-xl font-semibold temperature-season-text">Сильные морозы</h3>
+          <p class="text-base temperature-desc-text">Для северных регионов и долгих прогулок</p>
+        </div>
+        <button class="flex items-center gap-sm temperature-button-inner">
+          <span class="text-base font-medium header-nav-link">ПОДРОБНЕЕ</span>
+          <span class="temperature-button-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Карточка 4: Активный ребенок -->
+      <div class="card temperature-card temperature-card-4">
+        <!-- SVG иконка в левом верхнем углу -->
+        <div class="temperature-card-icon-container">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="5" r="2" fill="var(--text-heading)"/>
+            <path d="M12 7V11" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 14L12 11L15 14" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 17L12 19L14 17" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12L9 14M18 12L15 14" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 19L11 21M14 19L13 21" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- Температура по центру -->
+        <div class="temperature-content">
+          <p class="text-2xl font-bold temperature-value-text">Для движения</p>
+          <h3 class="text-xl font-semibold temperature-season-text">Активный ребенок</h3>
+          <p class="text-base temperature-desc-text">Для движения, спорта и детских площадок</p>
+        </div>
+        <button class="flex items-center gap-sm temperature-button-inner">
+          <span class="text-base font-medium header-nav-link">ПОДРОБНЕЕ</span>
+          <span class="temperature-button-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Модели, которые выбирают чаще всего" -->
+  <section class="container section-default section-models">
+    <!-- Заголовок -->
+    <div class="text-center section-header-spacing">
+      <h2 class="font-bold section-title-full">Модели, которые <span class="section-title-span">выбирают чаще всего</span></h2>
+    </div>
+
+    <!-- Карточки -->
+    <div class="grid grid-4 gap-lg models-grid">
+      <div class="card card-placeholder">
+        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+      </div>
+      <div class="card card-placeholder">
+        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+      </div>
+      <div class="card card-placeholder">
+        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+      </div>
+      <div class="card card-placeholder">
+        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+      </div>
+    </div>
+
+    <!-- Пагинация и навигация -->
+    <div class="flex flex-between items-center">
+      <p class="text-base models-pagination">1 из 32</p>
+      <div class="flex gap-md items-center">
+        <button class="flex items-center justify-center cursor-pointer arrow-button">
+          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8L10 3L10 13L0 8M10 8L60 8" stroke="#B0B0B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+        <button class="flex items-center justify-center cursor-pointer arrow-button">
+          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8L50 8M60 8L50 3L50 13L60 8" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "С размерами всё просто" -->
+  <section class="section-sizes">
+    <div class="container">
+      <!-- Заголовки -->
+      <div class="text-center section-header-spacing">
+        <h2 class="font-bold section-title-full">С размерами <span class="section-title-span">всё просто</span></h2>
+        <p class="text-base section-subtitle">Мы помогаем подобрать размер под рост, возраст и сезонную одежду</p>
+      </div>
+
+      <!-- Основной контент: две колонки -->
+      <div class="flex gap-xl sizes-content">
+        <!-- Левая колонка: три пункта и кнопка -->
+        <div class="section-col-flex">
+          <!-- Пункт 1: Понятная таблица размеров -->
+          <div class="feature-item">
+            <div class="flex items-start feature-icon-container">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3H21V21H3V3Z" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 9H21" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M9 3V21" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="text-xl font-semibold feature-title">Понятная таблица размеров</h4>
+              <p class="text-base feature-text">Размеры указаны по росту и возрасту ребёнка</p>
+            </div>
+          </div>
+
+          <!-- Пункт 2: Учитываем запас под поддеву -->
+          <div class="feature-item">
+            <div class="flex items-start feature-icon-container">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20V20H4V4Z" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 8H20" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 4V8" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 4V8" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="text-xl font-semibold feature-title">Учитываем запас под поддеву</h4>
+              <p class="text-base feature-text">Крой рассчитан на многослойность без скованности</p>
+            </div>
+          </div>
+
+          <!-- Пункт 3: Можно обменять -->
+          <div class="feature-item">
+            <div class="flex items-start feature-icon-container">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12H16" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 8L16 12L12 16" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8L8 12L12 16" stroke="var(--text-heading)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="text-xl font-semibold feature-title">Можно обменять, если не подошло</h4>
+              <p class="text-base feature-text">Простой процесс обмена в течение 14 дней</p>
+            </div>
+          </div>
+
+          <!-- Кнопка -->
+          <button class="flex items-center gap-sm temperature-button-inner">
+            <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
+            <span class="temperature-button-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <!-- Правая колонка: таблица размеров -->
+        <div class="section-col-flex">
+          <div class="card sizes-table-container">
+            <h3 class="text-xl font-semibold text-center sizes-table-title">Понятная таблица размеров</h3>
+            <div class="sizes-table-wrapper">
+              <table class="sizes-table">
+                <tbody>
+                  <tr>
+                    <td>Рост ребёнка</td>
+                    <td>104</td>
+                    <td>110</td>
+                    <td>116</td>
+                    <td>122</td>
+                    <td>128</td>
+                    <td>134</td>
+                    <td>140</td>
+                  </tr>
+                  <tr>
+                    <td>Длина изделия (А)</td>
+                    <td>99</td>
+                    <td>104.5</td>
+                    <td>109</td>
+                    <td>116</td>
+                    <td>121</td>
+                    <td>127</td>
+                    <td>134.5</td>
+                  </tr>
+                  <tr>
+                    <td>Длина плеча + рукав (В)</td>
+                    <td>50</td>
+                    <td>53</td>
+                    <td>55.5</td>
+                    <td>58.5</td>
+                    <td>62</td>
+                    <td>65.5</td>
+                    <td>68</td>
+                  </tr>
+                  <tr>
+                    <td>Длина изделия по шаговому шву (С)</td>
+                    <td>44</td>
+                    <td>48</td>
+                    <td>51.5</td>
+                    <td>55.5</td>
+                    <td>59.5</td>
+                    <td>62.5</td>
+                    <td>67</td>
+                  </tr>
+                  <tr>
+                    <td>Ширина изделия по линии низа (D)</td>
+                    <td>22</td>
+                    <td>22.5</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>24.5</td>
+                    <td>25</td>
+                    <td>25.5</td>
+                  </tr>
+                  <tr>
+                    <td>Ширина изделия по линии груди (Е)</td>
+                    <td>45</td>
+                    <td>46.5</td>
+                    <td>47.5</td>
+                    <td>48</td>
+                    <td>49.5</td>
+                    <td>51</td>
+                    <td>52.5</td>
+                  </tr>
+                  <tr>
+                    <td>Ширина изделия по линии бёдер (F)</td>
+                    <td>44</td>
+                    <td>45.5</td>
+                    <td>46.5</td>
+                    <td>47</td>
+                    <td>48.5</td>
+                    <td>50</td>
+                    <td>51.5</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Совет под таблицей -->
+            <div class="sizes-table-advice">
+              <p class="text-sm sizes-table-advice-text"><strong>Совет:</strong> Если рост ребёнка находится между размерами, рекомендуем выбрать больший размер для комфортной носки с поддевой.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Что говорят родители" -->
+  <section class="container section-default section-reviews">
+    <!-- Заголовок -->
+    <div class="text-center section-header-spacing">
+      <h2 class="font-bold section-title-full">Что говорят <span class="section-title-span">родители</span></h2>
+    </div>
+
+    <!-- Карточки с отзывами -->
+    <div class="grid grid-3 gap-lg reviews-grid">
+      <!-- Отзыв 1: Анастасия -->
+      <div class="card review-card">
+        <div class="review-stars">
+          <span>★★★★★</span>
+        </div>
+        <h4 class="text-lg font-semibold review-name">Анастасия</h4>
+        <p class="text-base review-text">"Отличный комбез, берите не пожалеете !!! 10 из 10. Для Сибири самое то!!! Влюбились в первого взгляда"</p>
+      </div>
+
+      <!-- Отзыв 2: Ирина -->
+      <div class="card review-card">
+        <div class="review-stars">
+          <span>★★★★★</span>
+        </div>
+        <h4 class="text-lg font-semibold review-name">Ирина</h4>
+        <p class="text-base review-text">"Крестница очень довольна. Сидит супер на ребенке."</p>
+      </div>
+
+      <!-- Отзыв 3: Татьяна -->
+      <div class="card review-card">
+        <div class="review-stars">
+          <span>★★★★★</span>
+        </div>
+        <h4 class="text-lg font-semibold review-name">Татьяна</h4>
+        <p class="text-base review-text">"Костюм супер. Сшит качественно. На рост 122 взяли 128 с хорошим запасом. В мороз -38, ребенку было комфортно."</p>
+      </div>
+    </div>
+
+    <!-- Пагинация и навигация -->
+    <div class="flex flex-between items-center">
+      <p class="text-base reviews-pagination">1 из 32</p>
+      <div class="flex gap-md items-center">
+        <button class="flex items-center justify-center cursor-pointer arrow-button">
+          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8L10 3L10 13L0 8M10 8L60 8" stroke="#B0B0B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+        <button class="flex items-center justify-center cursor-pointer arrow-button">
+          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 8L50 8M60 8L50 3L50 13L60 8" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Если остались вопросы — мы на связи" -->
+  <section class="section-contact">
+    <div class="container">
+      <!-- Заголовки -->
+      <div class="text-center section-header-spacing">
+        <h2 class="font-bold section-title-full">Если остались вопросы — мы на связи</h2>
+        <p class="text-base section-subtitle">Поможем с выбором, размером и условиями доставки</p>
+      </div>
+
+      <!-- Основной контент: две колонки -->
+      <div class="flex gap-xl contact-content">
+        <!-- Левая колонка: место для фотографии -->
+        <div class="contact-photo-container">
+          <div class="card contact-photo-card">
+            <p class="text-base contact-photo-text">[ФОТО ДЕТЕЙ В КОМБЕЗАХ]</p>
+          </div>
+        </div>
+
+        <!-- Правая колонка: форма -->
+        <div class="contact-form-container">
+          <form>
+            <!-- Поле Имя -->
+            <div class="form-group">
+              <label class="form-label">Имя*</label>
+              <input type="text" class="form-control contact-form-input" placeholder="Ваше имя">
+            </div>
+
+            <!-- Поле Телефон -->
+            <div class="form-group">
+              <label class="form-label">Телефон*</label>
+              <input type="tel" class="form-control contact-form-input" placeholder="Ваш телефон">
+            </div>
+
+            <!-- Поле Комментарий -->
+            <div class="form-group">
+              <label class="form-label">Комментарий</label>
+              <textarea class="form-control contact-form-textarea" rows="4" placeholder="Ваш комментарий"></textarea>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <button type="submit" class="btn-primary contact-submit-button">ОТПРАВИТЬ</button>
+
+            <!-- Разделитель -->
+            <div class="text-center contact-divider">
+              <p class="text-base contact-divider-text">Или</p>
+            </div>
+
+            <!-- Кнопки социальных сетей -->
+            <div class="flex flex-column gap-md">
+              <button type="button" class="flex items-center justify-between contact-social-button">
+                <span class="text-base font-medium social-button-text">НАПИСАТЬ В TG</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 14.95 9.7 15.05 9.37C15.07 9.31 15.07 9.18 14.98 9.1C14.89 9.02 14.77 9.05 14.68 9.07C14.54 9.1 12.38 10.32 8.19 12.64C7.59 13 7.04 13.18 6.53 13.16C5.97 13.14 4.92 12.88 4.1 12.65C3.13 12.39 2.37 12.24 2.43 11.71C2.46 11.42 2.89 11.12 3.66 10.81C6.93 9.51 9.63 8.58 11.75 8.02C14.94 7.04 15.77 6.74 16.17 6.74C16.26 6.74 16.47 6.77 16.61 6.89C16.73 6.99 16.78 7.13 16.81 7.22C16.84 7.31 16.87 7.51 16.84 7.67L16.64 8.8Z" fill="var(--text-heading)"/>
+                </svg>
+              </button>
+
+              <button type="button" class="flex items-center justify-between contact-social-button">
+                <span class="text-base font-medium social-button-text">НАПИСАТЬ В WA</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="var(--text-heading)"/>
+                </svg>
+              </button>
+
+              <button type="button" class="flex items-center justify-between contact-social-button">
+                <span class="text-base font-medium social-button-text">НАПИСАТЬ В INST</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="var(--text-heading)"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer-main">
+    <div class="container">
+      <!-- Основной контент футера: три колонки -->
+      <div class="grid grid-3 gap-xl footer-content">
+        <!-- Левая колонка: Бренд и соцсети -->
+        <div>
+          <h3 class="text-2xl font-bold footer-brand-title">ICE TOMAS</h3>
+          <p class="text-base footer-brand-text">Зимняя одежда, в которой продумана каждая мелочь</p>
+          <div class="flex gap-md items-center">
+            <a href="#" class="flex items-center justify-center footer-social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" stroke="rgba(255,255,255,0.8)" stroke-width="1" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="flex items-center justify-center footer-social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" stroke="rgba(255,255,255,0.8)" stroke-width="1" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="flex items-center justify-center footer-social-link">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 14.95 9.7 15.05 9.37C15.07 9.31 15.07 9.18 14.98 9.1C14.89 9.02 14.77 9.05 14.68 9.07C14.54 9.1 12.38 10.32 8.19 12.64C7.59 13 7.04 13.18 6.53 13.16C5.97 13.14 4.92 12.88 4.1 12.65C3.13 12.39 2.37 12.24 2.43 11.71C2.46 11.42 2.89 11.12 3.66 10.81C6.93 9.51 9.63 8.58 11.75 8.02C14.94 7.04 15.77 6.74 16.17 6.74C16.26 6.74 16.47 6.77 16.61 6.89C16.73 6.99 16.78 7.13 16.81 7.22C16.84 7.31 16.87 7.51 16.84 7.67L16.64 8.8Z" stroke="rgba(255,255,255,0.8)" stroke-width="1" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Средняя колонка: Навигация -->
+        <div>
+          <div class="flex flex-column gap-md">
+            <a href="#" class="text-base footer-nav-link">Каталог</a>
+            <a href="#" class="text-base footer-nav-link">О нас</a>
+            <a href="#" class="text-base footer-nav-link">Контакты</a>
+            <a href="#" class="text-base footer-nav-link">Блог</a>
+            <a href="#" class="text-base footer-nav-link">Доставка</a>
+            <a href="#" class="text-base footer-nav-link">Корзина</a>
+          </div>
+        </div>
+
+        <!-- Правая колонка: Контакты -->
+        <div class="footer-contact-group">
+          <div class="footer-contact-item">
+            <h4 class="text-base font-semibold footer-contact-title">АДРЕС</h4>
+            <p class="text-base footer-contact-text">г. Минск, ул. Производственная, 12</p>
+            <p class="text-base footer-contact-text">Беларусь, 220000</p>
+          </div>
+          <div class="footer-contact-item">
+            <h4 class="text-base font-semibold footer-contact-title">НОМЕР</h4>
+            <p class="text-base footer-contact-text">+375 (29) 123-45-67</p>
+          </div>
+          <div class="footer-contact-item">
+            <h4 class="text-base font-semibold footer-contact-title">ПОЧТА</h4>
+            <p class="text-base footer-contact-text">info@icetomas.ru</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя часть: копирайт и политики -->
+      <div class="footer-bottom">
+        <div class="flex flex-between items-center footer-bottom-content">
+          <p class="text-sm footer-copyright">© Все права защищены ООО "АЙС ТОМАС"</p>
+          <div class="flex gap-md items-center">
+            <a href="#" class="text-sm footer-bottom-link">Политика конфиденциальности</a>
+            <a href="#" class="text-sm footer-bottom-link">Условия использования</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/components/header.js"></script>
+</body>
+</html>
+
