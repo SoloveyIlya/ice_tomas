@@ -359,7 +359,6 @@
 .contact-photo-card {
   background-color: #4A4A4A;
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-2xl);
   min-height: 400px;
   display: flex;
   align-items: center;
