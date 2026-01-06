@@ -641,7 +641,7 @@
   aspect-ratio: 1;
   background-color: #E0E0E0;
   border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
+  object-fit: cover;
 }
 
 .grid-photo-text {
