@@ -1,4 +1,4 @@
-# CSS Руководство для разработчиков
+---
 
 ## Структура CSS файлов
 
@@ -205,11 +205,23 @@ xl: 32px
 ### 3. `typography.css` - Типография и шрифты
 Содержит импорт шрифта Montserrat, систему размеров текста и утилиты для типографии.
 
-#### Подключение
+#### Подключение всех CSS файлов (Правильный порядок)
 ```html
+<!-- 1. Reset - очистка стандартных стилей -->
+<link rel="stylesheet" href="css/reset.css">
+
+<!-- 2. Переменные и глобальные стили -->
+<link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/colors.css">
-<link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/layout.css">
+
+<!-- 3. Компоненты и анимации -->
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<!-- 4. Утилиты (в последнюю очередь) -->
+<link rel="stylesheet" href="css/utilities.css">
 ```
 
 #### Шрифт Montserrat
@@ -377,7 +389,419 @@ function myFunction() {
 
 ---
 
-## Полный пример HTML
+## Порядок подключения CSS файлов
+
+Очень важно подключать файлы в правильном порядке для корректной работы каскада CSS:
+
+1. **reset.css** - очищает стандартные стили браузера
+2. **variables.css** - определяет все переменные (тени, радиусы, переходы)
+3. **colors.css** - цветовая палитра
+4. **typography.css** - типография и шрифты
+5. **layout.css** - система сетки и отступов
+6. **components.css** - готовые компоненты
+7. **animations.css** - анимации
+8. **utilities.css** - утилиты (должны быть в конце для приоритета)
+
+---
+
+### 4. `reset.css` - Reset & Normalize
+
+Очищает стандартные стили браузера для консистентности на всех платформах.
+
+**Что делает:**
+- Обнуляет margins и paddings
+- Нормализует стили форм
+- Стилизует focus-состояния для доступности
+- Нормализует стили таблиц, списков, ссылок
+- Добавляет custom scrollbar для WebKit браузеров
+
+**Использование:**
+Автоматически применяется, не требует дополнительных классов.
+
+---
+
+### 5. `variables.css` - Global Design Variables
+
+Содержит все основные переменные дизайна-системы.
+
+**Радиусы углов:**
+```css
+--border-radius-xs: 2px
+--border-radius-sm: 4px
+--border-radius-md: 8px
+--border-radius-lg: 12px
+--border-radius-xl: 16px
+--border-radius-full: 9999px
+```
+
+**Тени:**
+```css
+--shadow-xs, --shadow-sm, --shadow-md, --shadow-lg, --shadow-xl, --shadow-2xl
+```
+
+**Переходы:**
+```css
+--transition-fast: 0.15s ease
+--transition-base: 0.3s ease
+--transition-slow: 0.5s ease
+```
+
+**Z-Index слои:**
+```css
+--z-dropdown: 1000
+--z-sticky: 1020
+--z-fixed: 1030
+--z-modal-backdrop: 1040
+--z-modal: 1050
+--z-popover: 1060
+--z-tooltip: 1070
+```
+
+---
+
+### 6. `components.css` - UI Components
+
+Стили для готовых компонентов, которые можно использовать сразу.
+
+#### Карточки (Cards)
+```html
+<div class="card">
+  <div class="card-header">
+    <h3>Заголовок</h3>
+  </div>
+  <img src="image.jpg" class="card-image">
+  <div class="card-body">
+    <p>Содержание карточки</p>
+  </div>
+  <div class="card-footer">
+    Подвал карточки
+  </div>
+</div>
+```
+
+#### Бейджи (Badges)
+```html
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-outline">Outline</span>
+```
+
+#### Формы
+```html
+<div class="form-group">
+  <label class="form-label">Ваше имя</label>
+  <input type="text" class="form-control" placeholder="Введите имя">
+  <small class="form-text">Помощь текст</small>
+</div>
+
+<!-- С ошибкой -->
+<input type="email" class="form-control is-invalid">
+<small class="form-error">Неверный email</small>
+
+<!-- С успехом -->
+<input type="text" class="form-control is-valid">
+<small class="form-success">Всё верно!</small>
+```
+
+#### Уведомления (Alerts)
+```html
+<div class="alert alert-info">Информационное сообщение</div>
+<div class="alert alert-success">Успешно!</div>
+<div class="alert alert-warning">Внимание!</div>
+<div class="alert alert-danger">Ошибка!</div>
+```
+
+#### Таблицы
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>Заголовок 1</th>
+      <th>Заголовок 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Данные 1</td>
+      <td>Данные 2</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+#### Модальные окна
+```html
+<div class="modal show">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Заголовок</h2>
+      <button class="modal-close">×</button>
+    </div>
+    <div class="modal-body">Содержание</div>
+    <div class="modal-footer">
+      <button class="btn-primary">Сохранить</button>
+      <button class="btn-secondary">Отмена</button>
+    </div>
+  </div>
+</div>
+```
+
+#### Хлебные крошки (Breadcrumb)
+```html
+<nav class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Главная</a></li>
+  <li class="breadcrumb-item"><a href="#">Категория</a></li>
+  <li class="breadcrumb-item active">Текущая страница</li>
+</nav>
+```
+
+#### Пагинация
+```html
+<nav class="pagination">
+  <li class="pagination-item">
+    <a href="#" class="pagination-link disabled">Назад</a>
+  </li>
+  <li class="pagination-item">
+    <a href="#" class="pagination-link active">1</a>
+  </li>
+  <li class="pagination-item">
+    <a href="#" class="pagination-link">2</a>
+  </li>
+  <li class="pagination-item">
+    <a href="#" class="pagination-link">Вперёд</a>
+  </li>
+</nav>
+```
+
+#### Дропдауны
+```html
+<div class="dropdown">
+  <button class="btn-primary">Меню</button>
+  <ul class="dropdown-menu">
+    <li><a href="#" class="dropdown-item">Опция 1</a></li>
+    <li><a href="#" class="dropdown-item">Опция 2</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a href="#" class="dropdown-item">Опция 3</a></li>
+  </ul>
+</div>
+```
+
+#### Progress Bar
+```html
+<div class="progress">
+  <div class="progress-bar" style="width: 70%">70%</div>
+</div>
+```
+
+#### Tooltips
+```html
+<div class="tooltip">
+  Наведите на меня
+  <span class="tooltiptext">Текст подсказки</span>
+</div>
+```
+
+---
+
+### 7. `animations.css` - Animations & Transitions
+
+Готовые анимации для микровзаимодействий.
+
+#### Fade (исчезновение)
+```html
+<div class="fade-in">Появление с прозрачностью</div>
+<div class="fade-out">Исчезновение</div>
+```
+
+#### Slide (скольжение)
+```html
+<div class="slide-up">Появление снизу</div>
+<div class="slide-down">Появление сверху</div>
+<div class="slide-left">Появление справа</div>
+<div class="slide-right">Появление слева</div>
+```
+
+#### Scale (масштабирование)
+```html
+<div class="scale-in">Появление с масштабированием</div>
+<div class="scale-out">Исчезновение с масштабированием</div>
+```
+
+#### Bounce (отскок)
+```html
+<div class="bounce">Прыгающий элемент</div>
+<div class="bounce-in">Появление с отскоком</div>
+```
+
+#### Pulse (пульс)
+```html
+<div class="pulse">Пульсирующий элемент</div>
+```
+
+#### Spin (вращение)
+```html
+<div class="spin">Вращающийся спиннер</div>
+<div class="spin-reverse">Вращение в обратном направлении</div>
+```
+
+#### Shake (встряска)
+```html
+<div class="shake">Встряхивающийся элемент</div>
+```
+
+#### Flip (переворот)
+```html
+<div class="flip-x">Переворот по оси X</div>
+<div class="flip-y">Переворот по оси Y</div>
+```
+
+#### Glow (свечение)
+```html
+<button class="btn-primary glow">Кнопка со свечением</button>
+```
+
+#### Hover Effects (эффекты при наведении)
+```html
+<div class="hover-scale">Увеличение при наведении</div>
+<div class="hover-lift">Поднятие с тенью</div>
+<div class="hover-shadow">Усиление тени</div>
+<div class="hover-color">Изменение цвета</div>
+<div class="hover-opacity">Изменение прозрачности</div>
+```
+
+#### Smooth Transitions
+```html
+<div class="smooth-transition">Плавный переход 0.3s</div>
+<div class="smooth-transition-fast">Быстрый переход 0.15s</div>
+<div class="smooth-transition-slow">Медленный переход 0.5s</div>
+```
+
+#### Задержка анимации
+```html
+<div class="bounce delay-100">Задержка 0.1s</div>
+<div class="bounce delay-300">Задержка 0.3s</div>
+<div class="bounce delay-500">Задержка 0.5s</div>
+```
+
+---
+
+### 8. `utilities.css` - Utility Classes
+
+Вспомогательные классы для быстрой разработки без написания CSS.
+
+#### Display
+```html
+<div class="block">Block элемент</div>
+<div class="inline">Inline элемент</div>
+<div class="inline-block">Inline-block</div>
+<div class="flex">Flex контейнер</div>
+<div class="grid">Grid контейнер</div>
+<div class="hidden">Скрытый элемент</div>
+```
+
+#### Position
+```html
+<div class="relative">Relative позиция</div>
+<div class="absolute">Absolute позиция</div>
+<div class="fixed">Fixed позиция</div>
+<div class="sticky">Sticky позиция</div>
+```
+
+#### Size
+```html
+<div class="w-full">100% ширина</div>
+<div class="w-1/2">50% ширина</div>
+<div class="w-1/3">33% ширина</div>
+<div class="h-full">100% высота</div>
+<div class="h-screen">100vh высота</div>
+```
+
+#### Overflow
+```html
+<div class="overflow-auto">Авто скролл</div>
+<div class="overflow-hidden">Обрезка</div>
+<div class="overflow-x-auto">Скролл по X</div>
+<div class="overflow-y-auto">Скролл по Y</div>
+```
+
+#### Z-Index
+```html
+<div class="z-10">z-index: 10</div>
+<div class="z-20">z-index: 20</div>
+<div class="z-50">z-index: 50</div>
+```
+
+#### Opacity
+```html
+<div class="opacity-0">Невидимый</div>
+<div class="opacity-50">50% прозрачность</div>
+<div class="opacity-100">Полностью видимый</div>
+```
+
+#### Border Radius
+```html
+<div class="rounded-none">Без закругления</div>
+<div class="rounded-sm">Маленькие углы</div>
+<div class="rounded-md">Средние углы</div>
+<div class="rounded-lg">Большие углы</div>
+<div class="rounded-full">Полный круг</div>
+```
+
+#### Shadow
+```html
+<div class="shadow-sm">Маленькая тень</div>
+<div class="shadow-md">Средняя тень</div>
+<div class="shadow-lg">Большая тень</div>
+<div class="shadow-xl">Очень большая тень</div>
+```
+
+#### Text Utilities
+```html
+<p class="text-left">Влево</p>
+<p class="text-center">По центру</p>
+<p class="text-right">Вправо</p>
+
+<p class="italic">Курсив</p>
+<p class="underline">Подчёркивание</p>
+<p class="line-through">Зачёркивание</p>
+
+<p class="truncate">Очень длинный текст обрезается...</p>
+<p class="line-clamp-2">Текст ограничен двумя строками...</p>
+```
+
+#### Transform & Animation
+```html
+<div class="scale-105 transform">Масштабирование</div>
+<div class="rotate-45">Поворот на 45 градусов</div>
+```
+
+#### Cursor
+```html
+<button class="cursor-pointer">Курсор указатель</button>
+<div class="cursor-not-allowed">Запрещённый курсор</div>
+```
+
+#### Flex Utilities
+```html
+<div class="flex justify-center items-center">Центр</div>
+<div class="flex justify-between">Пространство между</div>
+<div class="flex flex-col gap-md">Вертикальный flex с промежутком</div>
+```
+
+#### Accessibility
+```html
+<!-- Скрыт визуально, но доступен для screen readers -->
+<span class="sr-only">Только для читателей экрана</span>
+
+<!-- Скрыто при печати -->
+<button class="print-hidden">Не печатается</button>
+```
+
+---
+
+## Примеры комбинирования файлов
 
 ```html
 <!DOCTYPE html>
@@ -387,10 +811,15 @@ function myFunction() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сайт</title>
   
-  <!-- Подключение CSS файлов -->
+  <!-- Подключение CSS файлов (в правильном порядке) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/colors.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
   <!-- Заголовок -->
