@@ -546,6 +546,21 @@
   /* Использует стили из buttons.css через класс btn-primary */
 }
 
+.section-contact .contact-submit-button.btn-primary {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+}
+
+.section-contact .contact-submit-button.btn-primary:hover:not(:disabled) {
+  background-color: #B9903F;
+  border-color: #B9903F;
+}
+
+.section-contact .contact-submit-button.btn-primary:active:not(:disabled) {
+  background-color: #A98134;
+  border-color: #A98134;
+}
+
 .contact-divider {
   margin-bottom: var(--spacing-lg);
 }
@@ -556,6 +571,57 @@
 }
 
 /* .contact-social-button использует стили из buttons.css через класс btn-social */
+
+/* Brand colors for contact social buttons */
+.section-contact .contact-social-button {
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+.section-contact .contact-social-button svg {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.section-contact .contact-social-button:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+.section-contact .contact-social-button--tg {
+  background-color: #229ED9;
+}
+
+.section-contact .contact-social-button--tg:hover:not(:disabled) {
+  background-color: #1D8DC2;
+}
+
+.section-contact .contact-social-button--tg:active:not(:disabled) {
+  background-color: #197BA9;
+}
+
+.section-contact .contact-social-button--wa {
+  background-color: #25D366;
+}
+
+.section-contact .contact-social-button--wa:hover:not(:disabled) {
+  background-color: #20BD5B;
+}
+
+.section-contact .contact-social-button--wa:active:not(:disabled) {
+  background-color: #1BA452;
+}
+
+.section-contact .contact-social-button--inst {
+  background: linear-gradient(135deg, #F58529 0%, #DD2A7B 45%, #8134AF 100%);
+}
+
+.section-contact .contact-social-button--inst:hover:not(:disabled) {
+  background: linear-gradient(135deg, #E37720 0%, #C9246E 45%, #74309D 100%);
+}
+
+.section-contact .contact-social-button--inst:active:not(:disabled) {
+  background: linear-gradient(135deg, #CC6A1D 0%, #B21F62 45%, #662A8B 100%);
+}
 
 /* ===== FOOTER ===== */
 .footer-main {
