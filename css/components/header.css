@@ -7,6 +7,7 @@
 
 .promo-section p {
   margin: 0;
+  color: var(--bg-primary);
 }
 
 /* Основной хедер */
@@ -117,9 +118,9 @@ header .logo-mobile > div {
     align-items: center;
   }
 
-  header nav.desktop-nav {
+  /* header nav.desktop-nav {
     display: none;
-  }
+  } */
 
   header .flex-center.logo-mobile {
     order: 1;
