@@ -356,37 +356,67 @@
       <h2 class="font-bold section-title-full">Модели, которые <span class="section-title-span">выбирают чаще всего</span></h2>
     </div>
 
-    <!-- Карточки -->
-    <div class="grid grid-4 gap-lg models-grid">
-      <div class="card card-placeholder">
-        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+    <!-- Слайдер моделей -->
+    <div class="models-slider-container relative">
+      <div class="models-slider-wrapper">
+        <div class="models-slider-track">
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+          <div class="models-slide">
+            <div class="card card-placeholder">
+              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card card-placeholder">
-        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
-      </div>
-      <div class="card card-placeholder">
-        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
-      </div>
-      <div class="card card-placeholder">
-        <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
-      </div>
+
+      <!-- Стрелка влево -->
+      <button class="models-slider-arrow models-slider-arrow-left btn-arrow absolute flex items-center justify-center z-10" aria-label="Предыдущий слайд">
+        <span class="slider-arrow-icon-span">◀</span>
+      </button>
+
+      <!-- Стрелка вправо -->
+      <button class="models-slider-arrow models-slider-arrow-right btn-arrow absolute flex items-center justify-center z-10" aria-label="Следующий слайд">
+        <span class="slider-arrow-icon-span">▶</span>
+      </button>
     </div>
 
-    <!-- Пагинация и навигация -->
-    <div class="flex flex-between items-center">
-      <p class="text-base models-pagination">1 из 32</p>
-      <div class="flex gap-md items-center">
-        <button class="btn btn-ghost btn-icon flex items-center justify-center arrow-button" aria-label="Предыдущая страница">
-          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 8L10 3L10 13L0 8M10 8L60 8" stroke="#B0B0B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </button>
-        <button class="btn btn-ghost btn-icon flex items-center justify-center arrow-button" aria-label="Предыдущая страница">
-          <svg width="60" height="16" viewBox="0 0 60 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 8L50 8M60 8L50 3L50 13L60 8" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </button>
-      </div>
+    <!-- Пагинация -->
+    <div class="flex flex-between items-center models-pagination-container">
+      <p class="text-base models-pagination">1 из 8</p>
     </div>
   </section>
 
