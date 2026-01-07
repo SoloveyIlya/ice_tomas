@@ -276,6 +276,7 @@
   .models-slider-arrow {
     width: 32px;
     height: 32px;
+    top: 60%;
   }
 
   .models-slider-arrow-left {
@@ -290,6 +291,10 @@
 @media (max-width: 480px) {
   .models-slide {
     flex: 0 0 100%;
+  }
+
+  .models-slider-arrow {
+    top: 60%;
   }
 
   .models-slider-arrow-left {
@@ -490,21 +495,21 @@
   }
 
   .reviews-slider-arrow-left {
-    left: 10px;
+    left: 0;
   }
 
   .reviews-slider-arrow-right {
-    right: 10px;
+    right: 0;
   }
 }
 
 @media (max-width: 480px) {
   .reviews-slider-arrow-left {
-    left: 10px;
+    left: 0;
   }
 
   .reviews-slider-arrow-right {
-    right: 10px;
+    right: 0;
   }
 }
 
