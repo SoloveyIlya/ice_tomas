@@ -19,6 +19,16 @@
   z-index: var(--z-fixed);
 }
 
+/* Placeholder для фиксированного хедера */
+.header-placeholder {
+  height: 0;
+  transition: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 /* Фиксированный хедер при скролле */
 .header-main.header-fixed {
   position: fixed;
