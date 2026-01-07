@@ -796,6 +796,16 @@
   left: var(--spacing-lg);
 }
 
+/* Черные иконки для карточки "Сильные морозы" */
+.temperature-card-3 .temperature-card-icon-container img {
+  filter: brightness(0);
+}
+
+/* Черные иконки для карточки "Активный ребенок" */
+.temperature-card-4 .temperature-card-icon-container img {
+  filter: brightness(0);
+}
+
 /* Section header spacing */
 .section-header-spacing {
   margin-bottom: var(--spacing-xl);
