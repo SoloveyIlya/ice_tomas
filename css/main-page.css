@@ -321,6 +321,16 @@
   margin-top: 155px;
 }
 
+/* Скрываем мобильную кнопку на десктопе по умолчанию */
+.sizes-button-mobile {
+  display: none;
+}
+
+/* Показываем десктопную кнопку на десктопе по умолчанию */
+.sizes-button-desktop {
+  display: flex;
+}
+
 .sizes-photo-container {
   flex: 1;
   min-width: 300px;
@@ -846,6 +856,19 @@
   .section-sizes .section-col-flex .temperature-button-inner {
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
+  }
+
+  /* Скрываем кнопку в десктопной версии на мобильных устройствах */
+  .sizes-button-desktop {
+    display: none !important;
+  }
+
+  /* Показываем кнопку в мобильной версии и делаем на всю ширину */
+  .sizes-button-mobile {
+    display: flex !important;
+    width: 100%;
+    margin-top: var(--spacing-lg);
+    justify-content: center;
   }
 }
 

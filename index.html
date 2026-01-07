@@ -466,8 +466,8 @@
             </div>
           </div>
 
-          <!-- Кнопка -->
-          <button class="btn btn-outline btn-sm flex items-center gap-sm temperature-button-inner">
+          <!-- Кнопка (скрыта в мобильной версии) -->
+          <button class="btn btn-outline btn-sm flex items-center gap-sm temperature-button-inner sizes-button-desktop">
             <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
             <span class="temperature-button-icon">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -562,6 +562,16 @@
               <p class="text-sm sizes-table-advice-text"><strong>Совет:</strong> Если рост ребёнка находится между размерами, рекомендуем выбрать больший размер для комфортной носки с поддевой.</p>
             </div>
           </div>
+          
+          <!-- Кнопка под таблицей (видна только в мобильной версии) -->
+          <button class="btn btn-outline btn-sm flex items-center gap-sm temperature-button-inner sizes-button-mobile">
+            <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
+            <span class="temperature-button-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
         </div>
       </div>
     </div>
