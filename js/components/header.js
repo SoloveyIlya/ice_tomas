@@ -18,3 +18,40 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+
+// Фиксированный хедер при скролле
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header-main');
+  const promoSection = document.querySelector('.promo-section');
+  
+  if (!header || !promoSection) return;
+  
+  // Вычисляем высоту промо-секции
+  const promoHeight = promoSection.offsetHeight;
+  
+  function handleScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    
+    // Если прокрутили больше высоты промо-секции, делаем хедер фиксированным
+    if (scrollY > promoHeight) {
+      header.classList.add('header-fixed');
+    } else {
+      header.classList.remove('header-fixed');
+    }
+  }
+  
+  // Обработчик скролла с throttling для производительности
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Проверяем начальное состояние
+  handleScroll();
+});

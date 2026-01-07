@@ -210,6 +210,47 @@
   margin-bottom: var(--spacing-3xl);
 }
 
+.models-slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+}
+
+.models-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.models-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: var(--spacing-lg);
+}
+
+.models-slide {
+  flex: 0 0 calc(25% - var(--spacing-lg) * 0.75);
+  min-width: 0;
+}
+
+.models-slider-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Десктопная версия - стрелки вне карточек */
+.models-slider-arrow-left {
+  left: -25px;
+}
+
+.models-slider-arrow-right {
+  right: -25px;
+}
+
+.models-pagination-container {
+  margin-top: var(--spacing-md);
+}
+
 .models-pagination {
   color: var(--text-heading);
   margin: 0;
@@ -219,6 +260,51 @@
   background: none;
   border: none;
   padding: var(--spacing-sm);
+}
+
+/* Адаптивность для слайдера моделей */
+@media (max-width: 1200px) {
+  .models-slide {
+    flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.67);
+  }
+}
+
+@media (max-width: 768px) {
+  .models-slide {
+    flex: 0 0 calc(50% - var(--spacing-lg) * 0.5);
+  }
+
+  .models-slider-arrow {
+    width: 32px;
+    height: 32px;
+    top: 60%;
+  }
+
+  .models-slider-arrow-left {
+    left: 10px;
+  }
+
+  .models-slider-arrow-right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .models-slide {
+    flex: 0 0 100%;
+  }
+
+  .models-slider-arrow {
+    top: 60%;
+  }
+
+  .models-slider-arrow-left {
+    left: 10px;
+  }
+
+  .models-slider-arrow-right {
+    right: 10px;
+  }
 }
 
 /* ===== SIZES SECTION ===== */
@@ -234,6 +320,21 @@
 .sizes-content {
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
+/* Отступ сверху для кнопки в секции размеров */
+.section-sizes .section-col-flex .temperature-button-inner {
+  margin-top: 155px;
+}
+
+/* Скрываем мобильную кнопку на десктопе по умолчанию */
+.sizes-button-mobile {
+  display: none;
+}
+
+/* Показываем десктопную кнопку на десктопе по умолчанию */
+.sizes-button-desktop {
+  display: flex;
 }
 
 .sizes-photo-container {
@@ -297,8 +398,32 @@
   margin-bottom: var(--spacing-3xl);
 }
 
-.reviews-grid {
+.reviews-slider-wrapper-outer {
+  position: relative;
   margin-bottom: var(--spacing-xl);
+}
+
+.reviews-slider-container {
+  overflow: hidden;
+}
+
+.reviews-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: var(--spacing-lg);
+  align-items: stretch;
+}
+
+.reviews-slide {
+  flex: 0 0 calc(33.333% - var(--spacing-lg) * 0.67);
+  min-width: 0;
+  display: flex;
+  height: auto;
 }
 
 .review-card {
@@ -308,15 +433,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  position: relative;
+  height: 100%;
+  min-height: 280px;
 }
 
 .review-stars {
-  position: absolute;
-  bottom: var(--spacing-lg);
-  right: var(--spacing-lg);
   color: #FFD700;
   font-size: 18px;
+  margin-bottom: var(--spacing-xs);
 }
 
 .review-name {
@@ -328,11 +452,67 @@
   color: rgba(255,255,255,0.9);
   margin: 0;
   line-height: 1.6;
+  flex: 1;
+}
+
+.reviews-slider-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Десктопная версия - стрелки вне карточек */
+.reviews-slider-arrow-left {
+  left: -60px;
+}
+
+.reviews-slider-arrow-right {
+  right: -60px;
+}
+
+.reviews-pagination-container {
+  margin-top: var(--spacing-md);
 }
 
 .reviews-pagination {
   color: var(--text-heading);
   margin: 0;
+}
+
+/* Адаптивность для слайдера отзывов */
+@media (max-width: 1200px) {
+  .reviews-slide {
+    flex: 0 0 calc(50% - var(--spacing-lg) * 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-slide {
+    flex: 0 0 calc(100% - var(--spacing-lg) * 0);
+  }
+
+  .reviews-slider-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .reviews-slider-arrow-left {
+    left: 0;
+  }
+
+  .reviews-slider-arrow-right {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-slider-arrow-left {
+    left: 0;
+  }
+
+  .reviews-slider-arrow-right {
+    right: 0;
+  }
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -391,6 +571,21 @@
   /* Использует стили из buttons.css через класс btn-primary */
 }
 
+.section-contact .contact-submit-button.btn-primary {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+}
+
+.section-contact .contact-submit-button.btn-primary:hover:not(:disabled) {
+  background-color: #B9903F;
+  border-color: #B9903F;
+}
+
+.section-contact .contact-submit-button.btn-primary:active:not(:disabled) {
+  background-color: #A98134;
+  border-color: #A98134;
+}
+
 .contact-divider {
   margin-bottom: var(--spacing-lg);
 }
@@ -401,6 +596,57 @@
 }
 
 /* .contact-social-button использует стили из buttons.css через класс btn-social */
+
+/* Brand colors for contact social buttons */
+.section-contact .contact-social-button {
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+.section-contact .contact-social-button svg {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.section-contact .contact-social-button:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+.section-contact .contact-social-button--tg {
+  background-color: #229ED9;
+}
+
+.section-contact .contact-social-button--tg:hover:not(:disabled) {
+  background-color: #1D8DC2;
+}
+
+.section-contact .contact-social-button--tg:active:not(:disabled) {
+  background-color: #197BA9;
+}
+
+.section-contact .contact-social-button--wa {
+  background-color: #25D366;
+}
+
+.section-contact .contact-social-button--wa:hover:not(:disabled) {
+  background-color: #20BD5B;
+}
+
+.section-contact .contact-social-button--wa:active:not(:disabled) {
+  background-color: #1BA452;
+}
+
+.section-contact .contact-social-button--inst {
+  background: linear-gradient(135deg, #F58529 0%, #DD2A7B 45%, #8134AF 100%);
+}
+
+.section-contact .contact-social-button--inst:hover:not(:disabled) {
+  background: linear-gradient(135deg, #E37720 0%, #C9246E 45%, #74309D 100%);
+}
+
+.section-contact .contact-social-button--inst:active:not(:disabled) {
+  background: linear-gradient(135deg, #CC6A1D 0%, #B21F62 45%, #662A8B 100%);
+}
 
 /* ===== FOOTER ===== */
 .footer-main {
@@ -476,6 +722,87 @@
   text-decoration: none;
 }
 
+/* Мобильная версия футера - выравнивание ссылок по левому краю */
+@media (max-width: 768px) {
+  /* Основной контейнер футера */
+  .footer-main .container {
+    text-align: left;
+  }
+
+  /* Grid контейнер - выравнивание по левому краю */
+  .footer-content {
+    text-align: left;
+    justify-items: start;
+    align-items: start;
+  }
+
+  /* Все дочерние элементы grid */
+  .footer-content > div {
+    text-align: left;
+    justify-self: start;
+    align-self: start;
+  }
+
+  /* Навигационные ссылки */
+  .footer-content .flex.flex-column {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-nav-link {
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  /* Контейнер контактов */
+  .footer-contact-group {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-contact-item {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  /* Нижняя часть футера */
+  .footer-bottom {
+    text-align: left;
+  }
+
+  .footer-bottom .flex.flex-between.items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* Контейнер со ссылками на политики */
+  .footer-bottom-content .flex.gap-md.items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-bottom-link {
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  /* Копирайт */
+  .footer-copyright {
+    text-align: left;
+  }
+}
+
 /* ===== TABLE ===== */
 .sizes-table-container {
   background-color: var(--info-blocks);
@@ -490,14 +817,19 @@
 
 .sizes-table-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255,255,255,0.3);
+  overflow: hidden;
 }
 
 .sizes-table {
   background-color: transparent;
   color: white;
   width: 100%;
-  border-collapse: collapse;
-  border: 1px solid rgba(255,255,255,0.3);
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
 }
 
 .sizes-table th,
@@ -519,6 +851,8 @@
   background-color: rgba(255,255,255,0.15);
   text-align: center;
 }
+
+/* Скругление углов таблицы - применяется через overflow: hidden на wrapper */
 
 .sizes-table tbody tr {
   background-color: transparent;
@@ -542,8 +876,18 @@
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 767px) {
+  /* Prevent horizontal scroll */
+  .section-temperature,
+  .section-sizes,
+  .section-contact,
+  .section-temperature-full {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   .hero-slider {
     margin-top: 0;
+    padding: 0 var(--spacing-md);
   }
 
   .hero-slider-image {
@@ -594,6 +938,25 @@
   .contact-photo-container {
     margin-right: 0;
     margin-bottom: var(--spacing-lg);
+  }
+
+  /* Уменьшаем отступ сверху для кнопки "ПОДОБРАТЬ РАЗМЕР" в мобильной версии */
+  .section-sizes .section-col-flex .temperature-button-inner {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  /* Скрываем кнопку в десктопной версии на мобильных устройствах */
+  .sizes-button-desktop {
+    display: none !important;
+  }
+
+  /* Показываем кнопку в мобильной версии и делаем на всю ширину */
+  .sizes-button-mobile {
+    display: flex !important;
+    width: 100%;
+    margin-top: var(--spacing-lg);
+    justify-content: center;
   }
 }
 
@@ -794,6 +1157,16 @@
   position: absolute;
   top: var(--spacing-lg);
   left: var(--spacing-lg);
+}
+
+/* Черные иконки для карточки "Сильные морозы" */
+.temperature-card-3 .temperature-card-icon-container img {
+  filter: brightness(0);
+}
+
+/* Черные иконки для карточки "Активный ребенок" */
+.temperature-card-4 .temperature-card-icon-container img {
+  filter: brightness(0);
 }
 
 /* Section header spacing */
