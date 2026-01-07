@@ -17,6 +17,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -27,6 +29,9 @@ body {
   font-family: var(--font-primary, 'Montserrat', sans-serif);
   line-height: var(--line-height-normal, 1.5);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Typography Reset */

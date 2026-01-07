@@ -38,7 +38,7 @@
 }
 
 .header-nav {
-  padding-left: -50px;
+  /* Removed invalid negative padding */
 }
 
 .header-logo-container {

@@ -239,11 +239,11 @@
 }
 
 .models-slider-arrow-left {
-  left: -25px;
+  left: 20px;
 }
 
 .models-slider-arrow-right {
-  right: -25px;
+  right: 20px;
 }
 
 .models-pagination-container {
@@ -279,17 +279,25 @@
   }
 
   .models-slider-arrow-left {
-    left: -50px;
+    left: 10px;
   }
 
   .models-slider-arrow-right {
-    right: -50px;
+    right: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .models-slide {
     flex: 0 0 100%;
+  }
+
+  .models-slider-arrow-left {
+    left: 10px;
+  }
+
+  .models-slider-arrow-right {
+    right: 10px;
   }
 }
 
@@ -438,11 +446,11 @@
 }
 
 .reviews-slider-arrow-left {
-  left: -60px;
+  left: 20px;
 }
 
 .reviews-slider-arrow-right {
-  right: -60px;
+  right: 20px;
 }
 
 .reviews-pagination-container {
@@ -472,21 +480,21 @@
   }
 
   .reviews-slider-arrow-left {
-    left: -50px;
+    left: 10px;
   }
 
   .reviews-slider-arrow-right {
-    right: -50px;
+    right: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .reviews-slider-arrow-left {
-    left: -40px;
+    left: 10px;
   }
 
   .reviews-slider-arrow-right {
-    right: -40px;
+    right: 10px;
   }
 }
 
@@ -770,8 +778,18 @@
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 767px) {
+  /* Prevent horizontal scroll */
+  .section-temperature,
+  .section-sizes,
+  .section-contact,
+  .section-temperature-full {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   .hero-slider {
     margin-top: 0;
+    padding: 0 var(--spacing-md);
   }
 
   .hero-slider-image {
@@ -822,6 +840,12 @@
   .contact-photo-container {
     margin-right: 0;
     margin-bottom: var(--spacing-lg);
+  }
+
+  /* Уменьшаем отступ сверху для кнопки "ПОДОБРАТЬ РАЗМЕР" в мобильной версии */
+  .section-sizes .section-col-flex .temperature-button-inner {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
   }
 }
 
