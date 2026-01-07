@@ -340,3 +340,170 @@ document.addEventListener('DOMContentLoaded', function() {
   updateSlider();
 });
 
+// ===== REVIEWS SLIDER COMPONENT =====
+
+document.addEventListener('DOMContentLoaded', function() {
+  const reviewsSliderWrapper = document.querySelector('.reviews-slider-wrapper-outer');
+  
+  if (!reviewsSliderWrapper) {
+    return;
+  }
+  
+  const reviewsSliderContainer = reviewsSliderWrapper.querySelector('.reviews-slider-container');
+  const sliderTrack = reviewsSliderWrapper.querySelector('.reviews-slider-track');
+  const slides = reviewsSliderWrapper.querySelectorAll('.reviews-slide');
+  const prevButton = reviewsSliderWrapper.querySelector('.reviews-slider-arrow-left');
+  const nextButton = reviewsSliderWrapper.querySelector('.reviews-slider-arrow-right');
+  const paginationText = document.querySelector('.reviews-pagination');
+  
+  if (!sliderTrack || slides.length === 0) {
+    return;
+  }
+  
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  const slidesPerView = getSlidesPerView();
+  
+  // Определяем количество видимых слайдов в зависимости от размера экрана
+  function getSlidesPerView() {
+    const width = window.innerWidth;
+    if (width <= 768) return 1;
+    if (width <= 1200) return 2;
+    return 3;
+  }
+  
+  // Обновляем количество видимых слайдов при изменении размера окна
+  let slidesPerViewCurrent = getSlidesPerView();
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const newSlidesPerView = getSlidesPerView();
+      if (newSlidesPerView !== slidesPerViewCurrent) {
+        slidesPerViewCurrent = newSlidesPerView;
+        // Пересчитываем максимальный индекс
+        const maxIndex = Math.max(0, totalSlides - slidesPerViewCurrent);
+        if (currentIndex > maxIndex) {
+          currentIndex = maxIndex;
+        }
+        updateSlider();
+      }
+    }, 100);
+  });
+  
+  // Функция для обновления позиции слайдера
+  function updateSlider() {
+    if (slides.length === 0) return;
+    
+    const slideWidth = slides[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(sliderTrack).gap) || 0;
+    const translateX = -currentIndex * (slideWidth + gap);
+    sliderTrack.style.transform = `translateX(${translateX}px)`;
+    
+    // Обновляем текст пагинации
+    if (paginationText) {
+      const maxIndex = Math.max(0, totalSlides - slidesPerViewCurrent);
+      const totalPages = Math.ceil(totalSlides / slidesPerViewCurrent);
+      
+      // Рассчитываем текущую страницу
+      let currentPage;
+      if (currentIndex >= maxIndex) {
+        // Если мы на последней позиции, показываем последнюю страницу
+        currentPage = totalPages;
+      } else {
+        // Иначе рассчитываем страницу на основе индекса
+        currentPage = Math.floor(currentIndex / slidesPerViewCurrent) + 1;
+      }
+      
+      paginationText.textContent = `${currentPage} из ${totalPages}`;
+    }
+    
+    // Обновляем состояние кнопок
+    if (prevButton) {
+      prevButton.disabled = currentIndex === 0;
+      prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      prevButton.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+    }
+    
+    if (nextButton) {
+      const maxIndex = Math.max(0, totalSlides - slidesPerViewCurrent);
+      nextButton.disabled = currentIndex >= maxIndex;
+      nextButton.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+      nextButton.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+    }
+  }
+  
+  // Переход к следующей странице
+  function nextSlide() {
+    // Переходим на следующую страницу (по количеству видимых слайдов)
+    const nextIndex = currentIndex + slidesPerViewCurrent;
+    const maxIndex = Math.max(0, totalSlides - slidesPerViewCurrent);
+    
+    if (nextIndex <= maxIndex) {
+      currentIndex = nextIndex;
+    } else if (currentIndex < totalSlides - 1) {
+      // Если осталось меньше слайдов, чем видимых, показываем последние
+      currentIndex = Math.max(0, totalSlides - slidesPerViewCurrent);
+    }
+    updateSlider();
+  }
+  
+  // Переход к предыдущей странице
+  function prevSlide() {
+    // Переходим на предыдущую страницу (по количеству видимых слайдов)
+    const prevIndex = currentIndex - slidesPerViewCurrent;
+    if (prevIndex >= 0) {
+      currentIndex = prevIndex;
+    } else {
+      currentIndex = 0;
+    }
+    updateSlider();
+  }
+  
+  // Обработчики для кнопок навигации
+  if (nextButton) {
+    nextButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+    });
+  }
+  
+  if (prevButton) {
+    prevButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+    });
+  }
+  
+  // Поддержка свайпов для мобильных устройств
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  }
+  
+  if (reviewsSliderContainer) {
+    reviewsSliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    reviewsSliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  // Инициализация
+  updateSlider();
+});
+
