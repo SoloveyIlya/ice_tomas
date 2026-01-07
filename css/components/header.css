@@ -25,20 +25,17 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-color: var(--bg-section);
+  background-color: white;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-md);
   padding: 8px 0;
+  z-index: var(--z-fixed);
 }
 
-/* Убираем белый фон у логотипа при фиксированном хедере */
+/* Сохраняем белый фон у логотипа при фиксированном хедере для выступа */
 .header-main.header-fixed .logo-container {
-  background-color: transparent;
-}
-
-.header-nav {
-  /* Removed invalid negative padding */
+  background-color: white;
 }
 
 .header-logo-container {
