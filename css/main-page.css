@@ -238,12 +238,13 @@
   z-index: 10;
 }
 
+/* Десктопная версия - стрелки вне карточек */
 .models-slider-arrow-left {
-  left: 20px;
+  left: -25px;
 }
 
 .models-slider-arrow-right {
-  right: 20px;
+  right: -25px;
 }
 
 .models-pagination-container {
@@ -460,12 +461,13 @@
   z-index: 10;
 }
 
+/* Десктопная версия - стрелки вне карточек */
 .reviews-slider-arrow-left {
-  left: 20px;
+  left: -60px;
 }
 
 .reviews-slider-arrow-right {
-  right: 20px;
+  right: -60px;
 }
 
 .reviews-pagination-container {
@@ -718,6 +720,87 @@
 .footer-bottom-link {
   color: rgba(255,255,255,0.8);
   text-decoration: none;
+}
+
+/* Мобильная версия футера - выравнивание ссылок по левому краю */
+@media (max-width: 768px) {
+  /* Основной контейнер футера */
+  .footer-main .container {
+    text-align: left;
+  }
+
+  /* Grid контейнер - выравнивание по левому краю */
+  .footer-content {
+    text-align: left;
+    justify-items: start;
+    align-items: start;
+  }
+
+  /* Все дочерние элементы grid */
+  .footer-content > div {
+    text-align: left;
+    justify-self: start;
+    align-self: start;
+  }
+
+  /* Навигационные ссылки */
+  .footer-content .flex.flex-column {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-nav-link {
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  /* Контейнер контактов */
+  .footer-contact-group {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-contact-item {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  /* Нижняя часть футера */
+  .footer-bottom {
+    text-align: left;
+  }
+
+  .footer-bottom .flex.flex-between.items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* Контейнер со ссылками на политики */
+  .footer-bottom-content .flex.gap-md.items-center {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-bottom-link {
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  /* Копирайт */
+  .footer-copyright {
+    text-align: left;
+  }
 }
 
 /* ===== TABLE ===== */
