@@ -308,6 +308,11 @@
   align-items: flex-start;
 }
 
+/* Отступ сверху для кнопки в секции размеров */
+.section-sizes .section-col-flex .temperature-button-inner {
+  margin-top: 155px;
+}
+
 .sizes-photo-container {
   flex: 1;
   min-width: 300px;
@@ -562,14 +567,19 @@
 
 .sizes-table-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255,255,255,0.3);
+  overflow: hidden;
 }
 
 .sizes-table {
   background-color: transparent;
   color: white;
   width: 100%;
-  border-collapse: collapse;
-  border: 1px solid rgba(255,255,255,0.3);
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
 }
 
 .sizes-table th,
@@ -591,6 +601,8 @@
   background-color: rgba(255,255,255,0.15);
   text-align: center;
 }
+
+/* Скругление углов таблицы - применяется через overflow: hidden на wrapper */
 
 .sizes-table tbody tr {
   background-color: transparent;
