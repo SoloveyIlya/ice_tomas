@@ -180,10 +180,12 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
   
+  // Ищем стрелки в родительском элементе (секции), а не внутри контейнера
+  const sectionModels = modelsSliderContainer.closest('.section-models');
   const sliderTrack = modelsSliderContainer.querySelector('.models-slider-track');
   const slides = modelsSliderContainer.querySelectorAll('.models-slide');
-  const prevButton = modelsSliderContainer.querySelector('.models-slider-arrow-left');
-  const nextButton = modelsSliderContainer.querySelector('.models-slider-arrow-right');
+  const prevButton = sectionModels ? sectionModels.querySelector('.models-slider-arrow-left') : document.querySelector('.models-slider-arrow-left');
+  const nextButton = sectionModels ? sectionModels.querySelector('.models-slider-arrow-right') : document.querySelector('.models-slider-arrow-right');
   const paginationText = document.querySelector('.models-pagination');
   
   if (!sliderTrack || slides.length === 0) {
