@@ -46,7 +46,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Promo Section */
 .promo-section {
-  background-color: var(--promo-bg);
+  background: linear-gradient(to right, var(--brand-accent), var(--promo-bg));
   padding: 40px 20px;
   text-align: center;
+}
+
+.promo-section p {
+  color: var(--bg-primary);
 }

@@ -51,29 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
     contactPhotoCard.classList.add('img-zoom');
   }
 
-  // Плавная анимация для header при скролле
-  let lastScroll = 0;
+  // Хедер всегда виден при скролле (логика скрытия удалена)
   const header = document.querySelector('.header-main');
   
   if (header) {
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        header.style.transition = 'all 0.3s ease';
-        if (currentScroll > lastScroll && currentScroll > 200) {
-          // Скроллим вниз - скрываем header
-          header.style.transform = 'translateY(-100%)';
-        } else {
-          // Скроллим вверх - показываем header
-          header.style.transform = 'translateY(0)';
-        }
-      } else {
-        header.style.transform = 'translateY(0)';
-      }
-      
-      lastScroll = currentScroll;
-    });
+    // Убеждаемся, что хедер всегда виден
+    header.style.transform = 'translateY(0)';
   }
 
   // Анимация для иконок при наведении

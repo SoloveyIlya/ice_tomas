@@ -324,7 +324,7 @@
 
 /* Отступ сверху для кнопки в секции размеров */
 .section-sizes .section-col-flex .temperature-button-inner {
-  margin-top: 155px;
+  margin-top: 205px;
 }
 
 /* Скрываем мобильную кнопку на десктопе по умолчанию */
@@ -540,9 +540,18 @@
   background-color: #4A4A4A;
   border-radius: var(--border-radius-lg);
   min-height: 400px;
+  height: 735px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.contact-photo-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .contact-photo-text {
@@ -608,12 +617,18 @@
   color: currentColor;
 }
 
+.section-contact .contact-social-button .social-button-text {
+  color: #FFFFFF;
+}
+
 .section-contact .contact-social-button:focus-visible {
   outline-color: rgba(255, 255, 255, 0.9);
 }
 
 .section-contact .contact-social-button--tg {
   background-color: #229ED9;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 .section-contact .contact-social-button--tg:hover:not(:disabled) {
@@ -626,6 +641,8 @@
 
 .section-contact .contact-social-button--wa {
   background-color: #25D366;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 .section-contact .contact-social-button--wa:hover:not(:disabled) {
@@ -637,16 +654,19 @@
 }
 
 .section-contact .contact-social-button--inst {
-  background: linear-gradient(135deg, #F58529 0%, #DD2A7B 45%, #8134AF 100%);
+  background-color: #833AB4;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 .section-contact .contact-social-button--inst:hover:not(:disabled) {
-  background: linear-gradient(135deg, #E37720 0%, #C9246E 45%, #74309D 100%);
+  background-color: #6B2F95;
 }
 
 .section-contact .contact-social-button--inst:active:not(:disabled) {
-  background: linear-gradient(135deg, #CC6A1D 0%, #B21F62 45%, #662A8B 100%);
+  background-color: #5A2778;
 }
+
 
 /* ===== FOOTER ===== */
 .footer-main {
@@ -820,7 +840,7 @@
   overflow-y: hidden;
   border-radius: var(--border-radius-lg);
   border: 1px solid rgba(255,255,255,0.3);
-  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sizes-table {
@@ -878,11 +898,16 @@
 @media (max-width: 767px) {
   /* Prevent horizontal scroll */
   .section-temperature,
-  .section-sizes,
   .section-contact,
   .section-temperature-full {
     max-width: 100vw;
     overflow-x: hidden;
+  }
+
+  /* Allow table scrolling in sizes section */
+  .section-sizes {
+    max-width: 100vw;
+    overflow-x: visible;
   }
 
   .hero-slider {
@@ -895,7 +920,7 @@
   }
 
   .hero-slider-container-inner {
-    height: 250px;
+    height: 200px;
   }
 
   .slider-arrow {
@@ -940,6 +965,11 @@
     margin-bottom: var(--spacing-lg);
   }
 
+  .contact-photo-card {
+    height: auto;
+    min-height: 300px;
+  }
+
   /* Уменьшаем отступ сверху для кнопки "ПОДОБРАТЬ РАЗМЕР" в мобильной версии */
   .section-sizes .section-col-flex .temperature-button-inner {
     margin-top: var(--spacing-xl);
@@ -957,6 +987,16 @@
     width: 100%;
     margin-top: var(--spacing-lg);
     justify-content: center;
+  }
+
+  /* Таблица размеров - горизонтальный скролл */
+  .sizes-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .sizes-table {
+    min-width: 600px;
   }
 }
 
