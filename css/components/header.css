@@ -91,7 +91,9 @@
 }
 
 .header-cart-icon {
-  font-size: 24px;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 }
 
 .header-cart-badge {
@@ -258,8 +260,10 @@ header .logo-mobile > div {
     cursor: pointer;
   }
 
-  .mobile-menu-cart span:first-child {
-    font-size: 24px;
+  .mobile-menu-cart svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
   }
 
   .mobile-menu-cart .cart-badge {

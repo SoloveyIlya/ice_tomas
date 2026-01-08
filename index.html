@@ -53,7 +53,7 @@
             >
           </div>
           <div class="flex items-center relative cursor-pointer">
-            <span class="header-cart-icon">🛒</span>
+            <svg class="header-cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#8C7BC3" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#8C7BC3" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#8C7BC3" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
             <span class="absolute flex items-center justify-center header-cart-badge">0</span>
           </div>
         </div>
@@ -94,7 +94,7 @@
 
       <!-- Корзина в мобильном меню -->
       <div class="mobile-menu-cart" onclick="toggleMobileMenu()">
-        <span>🛒</span>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#8C7BC3" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#8C7BC3" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#8C7BC3" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
         <span class="mobile-menu-cart-text">Корзина</span>
         <span class="cart-badge">0</span>
       </div>
@@ -362,43 +362,179 @@
       <div class="models-slider-wrapper">
         <div class="models-slider-track">
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-1.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-1-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(148)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">5 490 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-2.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-2-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(125)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">5 990 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-3.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-3-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★☆</span>
+                  <span class="rating-count text-sm">(92)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">6 290 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-4.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-4-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(167)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">5 790 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-5.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-5-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(134)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">6 490 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-6.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-6-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★☆</span>
+                  <span class="rating-count text-sm">(108)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">5 590 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-7.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-7-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(156)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">6 190 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="models-slide">
-            <div class="card card-placeholder">
-              <p class="text-base card-placeholder-text">[КОМБЕЗ]</p>
+            <div class="card card-product">
+              <div class="card-image-container">
+                <img src="./media/cards/card-8.webp" alt="Комбез" class="card-image card-image-primary">
+                <img src="./media/cards/card-8-2.webp" alt="Комбез" class="card-image card-image-hover">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title text-lg font-semibold">Комбинезон зимний</h3>
+                <div class="card-rating flex items-center gap-sm">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count text-sm">(141)</span>
+                </div>
+                <div class="card-price-section">
+                  <p class="card-price text-xl font-bold">5 890 ₽</p>
+                </div>
+                <button class="btn btn-outline btn-full card-add-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;" class="card-btn-icon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z" stroke="#C9A24D" stroke-width="1.5"></path> <path d="M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7" stroke="#C9A24D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                  <span>Добавить в корзину</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -432,50 +568,10 @@
 
       <!-- Основной контент: две колонки -->
       <div class="flex gap-xl sizes-content">
-        <!-- Левая колонка: три пункта и кнопка -->
+        <!-- Левая колонка: изображение -->
         <div class="section-col-flex">
-          <!-- Пункт 1: Понятная таблица размеров -->
-          <div class="feature-item scroll-slide-left scroll-delay-1">
-            <div class="flex items-start feature-icon-container">
-              <img src="media/svgicon/ruler.svg" alt="Понятная таблица размеров" width="40" height="40">
-            </div>
-            <div class="feature-content">
-              <h4 class="text-xl font-semibold feature-title">Понятная таблица размеров</h4>
-              <p class="text-base feature-text">Размеры указаны по росту и возрасту ребёнка</p>
-            </div>
-          </div>
-
-          <!-- Пункт 2: Учитываем запас под поддеву -->
-          <div class="feature-item scroll-slide-left scroll-delay-2">
-            <div class="flex items-start feature-icon-container">
-              <img src="media/svgicon/tshirt.svg" alt="Учитываем запас под поддеву" width="40" height="40">
-            </div>
-            <div class="feature-content">
-              <h4 class="text-xl font-semibold feature-title">Учитываем запас под поддеву</h4>
-              <p class="text-base feature-text">Крой рассчитан на многослойность без скованности</p>
-            </div>
-          </div>
-
-          <!-- Пункт 3: Можно обменять -->
-          <div class="feature-item scroll-slide-left scroll-delay-3">
-            <div class="flex items-start feature-icon-container">
-              <img src="media/svgicon/switch.svg" alt="Можно обменять, если не подошло" width="40" height="40">
-            </div>
-            <div class="feature-content">
-              <h4 class="text-xl font-semibold feature-title">Можно обменять, если не подошло</h4>
-              <p class="text-base feature-text">Простой процесс обмена в течение 14 дней</p>
-            </div>
-          </div>
-
-          <!-- Кнопка (скрыта в мобильной версии) -->
-          <button class="btn btn-outline btn-sm flex items-center gap-sm temperature-button-inner sizes-button-desktop">
-            <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
-            <span class="temperature-button-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
+          <!-- Изображение -->
+          <img src="media/sizing.jpg" alt="Размеры" class="sizes-image scroll-slide-left">
         </div>
 
         <!-- Правая колонка: таблица размеров -->
@@ -563,18 +659,64 @@
               <p class="text-sm sizes-table-advice-text"><strong>Совет:</strong> Если рост ребёнка находится между размерами, рекомендуем выбрать больший размер для комфортной носки с поддевой.</p>
             </div>
           </div>
-          
-          <!-- Кнопка под таблицей (видна только в мобильной версии) -->
-          <button class="btn btn-outline btn-sm flex items-center gap-sm temperature-button-inner sizes-button-mobile">
-            <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
-            <span class="temperature-button-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
         </div>
       </div>
+
+      <!-- Пункты под двумя колонками -->
+      <div class="flex gap-lg sizes-features-row">
+        <!-- Пункт 1: Понятная таблица размеров -->
+        <div class="feature-item scroll-slide-left scroll-delay-1">
+          <div class="flex items-start feature-icon-container">
+            <img src="media/svgicon/ruler.svg" alt="Понятная таблица размеров" width="40" height="40">
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Понятная таблица размеров</h4>
+            <p class="text-base feature-text">Размеры указаны по росту и возрасту ребёнка</p>
+          </div>
+        </div>
+
+        <!-- Пункт 2: Учитываем запас под поддеву -->
+        <div class="feature-item scroll-slide-left scroll-delay-2">
+          <div class="flex items-start feature-icon-container">
+            <img src="media/svgicon/tshirt.svg" alt="Учитываем запас под поддеву" width="40" height="40">
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Учитываем запас под поддеву</h4>
+            <p class="text-base feature-text">Крой рассчитан на многослойность без скованности</p>
+          </div>
+        </div>
+
+        <!-- Пункт 3: Можно обменять -->
+        <div class="feature-item scroll-slide-left scroll-delay-3">
+          <div class="flex items-start feature-icon-container">
+            <img src="media/svgicon/switch.svg" alt="Можно обменять, если не подошло" width="40" height="40">
+          </div>
+          <div class="feature-content">
+            <h4 class="text-xl font-semibold feature-title">Можно обменять, если не подошло</h4>
+            <p class="text-base feature-text">Простой процесс обмена в течение 14 дней</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Кнопка под таблицей (видна только в мобильной версии) -->
+      <button class="btn btn-outline btn-full flex items-center gap-sm temperature-button-inner sizes-button-mobile">
+        <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
+        <span class="temperature-button-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+
+      <!-- Кнопка (скрыта в мобильной версии) -->
+      <button class="btn btn-outline btn-full flex items-center gap-sm temperature-button-inner sizes-button-desktop">
+        <span class="text-base font-medium header-nav-link">ПОДОБРАТЬ РАЗМЕР</span>
+        <span class="temperature-button-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
     </div>
   </section>
 
@@ -855,4 +997,5 @@
   <script src="js/components/animations.js"></script>
 </body>
 </html>
+
 
