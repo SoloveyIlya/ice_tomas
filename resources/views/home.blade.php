@@ -100,10 +100,32 @@
   <section class="hero-slider relative">
     <div class="container relative rounded-lg overflow-hidden hero-slider-container-inner">
       <!-- Изображение баннера -->
-      <img src="{{ asset("media/banner-1.png") }}" alt="Баннер" class="hero-slider-image">
-      <img src="{{ asset("media/banner-2.png") }}" alt="Баннер" class="hero-slider-image">
-      <img src="{{ asset("media/banner-3.png") }}" alt="Баннер" class="hero-slider-image">
-      <img src="{{ asset("media/banner-4.png") }}" alt="Баннер" class="hero-slider-image">
+      @forelse($banners as $banner)
+        @if($banner->image)
+          @php
+            // Если путь начинается с media/, значит это файл из storage
+            if (str_starts_with($banner->image, 'media/')) {
+              // Путь будет storage/media/banner-1.png -> доступен через симлинк как public/storage/media/banner-1.png
+              $imagePath = asset('storage/' . $banner->image);
+            } elseif (str_contains($banner->image, '/')) {
+              // Если путь содержит /, используем как есть
+              $imagePath = asset('storage/' . $banner->image);
+            } else {
+              // Просто имя файла
+              $imagePath = asset('storage/media/' . $banner->image);
+            }
+            // Fallback на старые файлы в public/media (прямой путь)
+            $fallbackPath = asset('media/' . basename($banner->image));
+          @endphp
+          <img src="{{ $imagePath }}" alt="Баннер" class="hero-slider-image" onerror="this.onerror=null; this.src='{{ $fallbackPath }}';">
+        @endif
+      @empty
+        <!-- Если баннеров нет, показываем дефолтные из public/media -->
+        <img src="{{ asset('media/banner-1.png') }}" alt="Баннер" class="hero-slider-image">
+        <img src="{{ asset('media/banner-2.png') }}" alt="Баннер" class="hero-slider-image">
+        <img src="{{ asset('media/banner-3.png') }}" alt="Баннер" class="hero-slider-image">
+        <img src="{{ asset('media/banner-4.png') }}" alt="Баннер" class="hero-slider-image">
+      @endforelse
       
       <!-- Стрелка влево -->
       <button class="slider-arrow slider-arrow-left btn-arrow absolute flex items-center justify-center z-10" aria-label="Предыдущий слайд">
@@ -118,10 +140,15 @@
     
     <!-- Индикаторы пагинации -->
     <div class="container flex gap-sm pagination-container">
-      <span class="pagination-dot active cursor-pointer"></span>
-      <span class="pagination-dot cursor-pointer"></span>
-      <span class="pagination-dot cursor-pointer"></span>
-      <span class="pagination-dot cursor-pointer"></span>
+      @foreach($banners as $index => $banner)
+        <span class="pagination-dot {{ $index === 0 ? 'active' : '' }} cursor-pointer"></span>
+      @endforeach
+      @if($banners->isEmpty())
+        <span class="pagination-dot active cursor-pointer"></span>
+        <span class="pagination-dot cursor-pointer"></span>
+        <span class="pagination-dot cursor-pointer"></span>
+        <span class="pagination-dot cursor-pointer"></span>
+      @endif
     </div>
 
     <!-- Блок с социальными сетями -->
