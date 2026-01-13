@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
 
         // Создаем администратора для Filament
         $this->call(AdminUserSeeder::class);
+        
+        // Создаем статьи для блога
+        $this->call(ArticleSeeder::class);
     }
 }

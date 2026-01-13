@@ -15,7 +15,7 @@
           <a href="/" class="text-base header-nav-link">Каталог</a>
           <a href="/about" class="text-base header-nav-link">О нас</a>
           <a href="/contacts" class="text-base header-nav-link">Контакты</a>
-          <a href="#" class="text-base header-nav-link">Блог</a>
+          <a href="/blog" class="text-base header-nav-link">Блог</a>
         </nav>
 
         <!-- Логотип мобильный (слева) -->
@@ -72,7 +72,7 @@
         <a href="/" onclick="toggleMobileMenu()">Каталог</a>
         <a href="/about" onclick="toggleMobileMenu()">О нас</a>
         <a href="/contacts" onclick="toggleMobileMenu()">Контакты</a>
-        <a href="#" onclick="toggleMobileMenu()">Блог</a>
+        <a href="/blog" onclick="toggleMobileMenu()">Блог</a>
       </nav>
 
       <!-- Поиск в мобильном меню -->
@@ -276,7 +276,7 @@
             <a href="/" class="text-base footer-nav-link">Каталог</a>
             <a href="/about" class="text-base footer-nav-link">О нас</a>
             <a href="/contacts" class="text-base footer-nav-link">Контакты</a>
-            <a href="#" class="text-base footer-nav-link">Блог</a>
+            <a href="/blog" class="text-base footer-nav-link">Блог</a>
             <a href="#" class="text-base footer-nav-link">Доставка</a>
             <a href="#" class="text-base footer-nav-link">Корзина</a>
           </div>

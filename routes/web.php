@@ -22,3 +22,6 @@ Route::get('/contacts', function () {
     return view('contacts');
 });
 
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
+
