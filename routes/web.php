@@ -29,3 +29,7 @@ Route::get('/cart', function () {
     return view('cart');
 })->name('cart');
 
+Route::get('/delivery', function () {
+    return view('delivery');
+})->name('delivery');
+
