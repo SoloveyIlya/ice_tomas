@@ -25,3 +25,7 @@ Route::get('/contacts', function () {
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
+
