@@ -13,8 +13,8 @@
         <!-- Левая часть - Навигация (десктоп) -->
         <nav class="desktop-nav flex gap-lg header-nav">
           <a href="#" class="text-base header-nav-link">Каталог</a>
-          <a href="#" class="text-base header-nav-link">О нас</a>
-          <a href="#" class="text-base header-nav-link">Контакты</a>
+          <a href="/about" class="text-base header-nav-link">О нас</a>
+          <a href="/contacts" class="text-base header-nav-link">Контакты</a>
           <a href="#" class="text-base header-nav-link">Блог</a>
         </nav>
 
@@ -68,8 +68,8 @@
       
       <nav>
         <a href="#" onclick="toggleMobileMenu()">Каталог</a>
-        <a href="#" onclick="toggleMobileMenu()">О нас</a>
-        <a href="#" onclick="toggleMobileMenu()">Контакты</a>
+        <a href="/about" onclick="toggleMobileMenu()">О нас</a>
+        <a href="/contacts" onclick="toggleMobileMenu()">Контакты</a>
         <a href="#" onclick="toggleMobileMenu()">Блог</a>
       </nav>
 
@@ -972,8 +972,8 @@
         <div>
           <div class="flex flex-column gap-md">
             <a href="#" class="text-base footer-nav-link">Каталог</a>
-            <a href="#" class="text-base footer-nav-link">О нас</a>
-            <a href="#" class="text-base footer-nav-link">Контакты</a>
+            <a href="/about" class="text-base footer-nav-link">О нас</a>
+            <a href="/contacts" class="text-base footer-nav-link">Контакты</a>
             <a href="#" class="text-base footer-nav-link">Блог</a>
             <a href="#" class="text-base footer-nav-link">Доставка</a>
             <a href="#" class="text-base footer-nav-link">Корзина</a>
